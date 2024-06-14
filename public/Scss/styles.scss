@@ -1,0 +1,4109 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:wght@300;400;500;600;700;800&family=Pacifico&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:wght@100;300;400;500;700;900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+// Variabile pentru fontSize si color
+$blueColor:#0844A8;
+$whiteColor3:#ffff;
+$blueWhiteColor:#e3e4e6;
+$blueWhiteColor2:#c6d8ff;
+$grayLightColor: #7e7d7d;
+$whiteColor2: #ffff;
+$whiteColor: #e7e6e6;
+$yellowColor: #fcc53b;
+$grayColor: #161616;
+$redColor: #d00000;
+
+$redColor2: #ad0f17;
+$greenColor:#04e722;
+
+// font-size
+$fontSizeH3: 25px;
+$fontSizeH4: 20px;
+$fontSizep: 17px;
+$fontSizeH2: 30px;
+$fontSizeH1: 40px;
+$fontSizeInput: 15px;
+$fontSizeButton: 26px;
+$fontSizeButtonMin: 20px;
+
+// Functii Flex
+@mixin flex-column {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+  }
+
+  @mixin flex-column2 {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+
+  }
+
+
+  @mixin flex-reverse {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row-reverse;
+
+  }
+
+  @mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+
+  @mixin flex-start {
+    display: flex;
+    justify-content: start;
+    align-items: start;
+  }
+  @mixin flex-startJ {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+  }
+
+  @mixin flex-startC {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+  }
+
+  @mixin flex-end {
+    display: flex;
+    justify-content: end;
+    align-items: end;
+  }
+
+  @mixin flex-endC {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+  }
+
+  @mixin flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+
+  @mixin flex-reverse2 {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+
+
+
+  @mixin flex-around{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+
+
+// Color Request Erorrs
+.errors {
+    margin: 3px;
+    text-align: center;
+    font-size: $fontSizep;
+    color: $redColor;
+    font-weight: 700;
+}
+
+.images{
+    @include flex-center();
+
+img{
+    height: 115px;
+    border-radius: 50%;
+
+
+}
+}
+
+
+
+
+.element{
+padding: 5px 12px;
+    gap: 10px 3px;
+   @include flex-center();
+width: 100%;
+height: 100%;
+    li {
+
+            color: $blueColor;
+            font-size: $fontSizeH4;
+            font-weight: 800;
+            text-align: center;
+            position: relative;
+            transition: .2s ease-in-out;
+list-style: none;
+&:hover{
+  color: $grayColor;
+}
+
+        }
+        a{
+            gap: 10px;
+            text-decoration: none;
+        }
+
+    #user{
+        border-radius: 10px;
+        background-color: $yellowColor;
+        padding: 5px;
+        width: 90px;
+        height: 72px;
+text-align: center;
+        border: 3px solid $grayColor;
+        font-size: 50px;
+        gap: 5px;
+        font-weight: 600;
+        color: $grayColor;
+      }
+    }
+
+
+
+
+.navbar {
+    border-radius: 20px;
+    border-top: 4px solid $yellowColor;
+             border-bottom: 3px solid $blueColor;
+             border-left: 4px solid $blueColor;
+             border-right: 4px solid $blueColor;
+    background-color: $blueWhiteColor2;
+    width: 100%;
+  @include flex-center();
+    list-style: none;
+    position: relative;
+    padding:10px;
+
+}
+
+
+
+
+.btn {
+    width: 160px;
+    border-radius: 15px;
+    font-weight: 700;
+    height: 38px;
+    background-color: $grayLightColor;
+    color: $whiteColor3;
+
+}
+
+.open , .close {
+    position: absolute;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+
+}
+
+.open {
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+.close {
+    top: 20px;
+    right: 20px;
+
+}
+
+
+
+@media(max-width: 576px) {
+    .element{
+@include flex-column();
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        z-index: 100;
+        right: -230%;
+        background-color: $grayLightColor;
+        transition: all 0.5s ease;
+
+        li {
+            margin-top: 21px ;
+            color:$whiteColor ;
+            display: flex;
+            text-underline-offset: 8px;
+            transition: .2s ease;
+    &:hover{
+        color: $blueColor;
+    }
+    }
+
+
+
+    }
+
+    #check:checked~.element{right: 0;}
+
+
+    .btn {
+        display: flex;
+        justify-content: center;
+
+    }
+    .open , .close {
+        display: block;
+
+    }
+    #check {
+        display: none;
+
+    }
+
+    }
+
+
+
+
+
+@media(max-width: 1068px) {
+    .element{
+@include flex-column();
+        width:100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        z-index: 100;
+        right: -230%;
+        background-color: $grayLightColor;
+        transition: all 0.5s ease;
+
+        li {
+            margin-top: 50px;
+            color:$whiteColor ;
+            display: flex;
+            text-underline-offset: 8px;
+            transition: .2s ease;
+    &:hover{
+        color: $blueColor;
+    }
+    }
+
+
+
+    }
+
+    #check:checked~.element{right: 0;}
+
+
+    .btn {
+        display: flex;
+        justify-content: center;
+
+    }
+    .open , .close {
+        display: block;
+
+    }
+    #check {
+        display: none;
+
+    }
+
+
+    }
+
+
+
+
+#check {
+    display: none;
+
+}
+
+.background{
+    margin: 20px 0px;
+height: 100%;
+width: 100%;
+background-color: $blueWhiteColor;
+    img {
+border-radius: 20%;
+
+        height: 150px;
+    }
+
+   .links {
+    @include flex-center();
+        gap: 20px;
+    }
+
+    .links a {
+        text-decoration: none;
+        color: $grayColor;
+        font-size: $fontSizeH4;
+        list-style: none;
+        transition: .2s ease;
+        &:hover{
+            color: $blueColor;
+        }
+    }
+
+     li {
+        list-style: none;
+        text-align: center;
+    }
+
+    .admin_href{
+        font-size: $fontSizeH3;
+        color: $redColor;
+        font-weight: 700;
+        transition: .2s ease;
+
+        &:hover{
+            color: $blueColor;
+        }
+    }
+    .footer {
+        padding: 10px;
+        height: 100%;
+        width: 100%;
+        @include flex-between();
+
+
+
+}
+}
+
+
+@media (max-width: 1068px) {
+    .footer{
+
+        @include flex-column();
+    }
+    .background{
+        width: 100%;
+height: 100%;
+        img {
+         height: 110px;
+                }
+    }
+}
+
+
+@media (max-width: 576px) {
+    .footer {
+width: 100%;
+height: 100%;
+        @include flex-column();
+    }
+    .background {
+        text-align: center;
+        width: 100%;
+height: 100%;
+        img {
+            height: 50px
+        }
+    }
+}
+
+
+
+
+
+
+// Formular Search + slider
+
+.container {
+    margin: auto;
+    background-repeat: no-repeat !important;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 450px;
+    padding: 10px 20px;
+    @include flex-reverse();
+
+&::before{
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 450px;
+  background: url("https://images.unsplash.com/photo-1523464582678-6e1b404d812b?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D") no-repeat center/cover;
+  filter: blur(2px);
+  z-index: -1;
+
+}
+
+
+.swiper {
+    height: 290px;
+width: 860px;
+border-radius: 15px;
+}
+
+  .swiper-slide{
+width: auto;
+height: auto;
+img {
+object-fit: cover;
+height: 100%;
+width: 100%;
+
+}
+
+
+
+}
+      }
+
+      @media (max-width: 1068px) {
+        .container{
+            width: 100%;
+            height: 100%;
+            @include flex-center();
+
+            .swiper {
+            display: none;
+            }
+        }
+
+    }
+
+
+    @media (max-width: 576px) {
+        .container{
+            width: 100%;
+            height: 100%;
+            @include flex-center();
+    }
+
+
+}
+
+      .formular {
+        position: relative;
+        padding: 15px;
+        background-color: $whiteColor;
+        height: 290px;
+        width: 350px;
+        border-radius: 15px;
+
+        h3{
+            text-align: center;
+            font-size: $fontSizeH3;
+            color: $blueColor;
+            font-weight: 700;
+        }
+        h4 {
+            text-align: center;
+            font-size: $fontSizeH4;
+            color: $blueColor;
+            font-weight: 600;
+        }
+
+
+    }
+
+
+
+
+    .form-group {
+        margin: 15px 15px;
+        width: auto;
+        height: auto;
+   @include flex-center();
+
+}
+
+    .input_right,
+    .input_left {
+        font-weight: 600;
+        padding: 2px;
+        font-size: $fontSizeInput;
+        border: 1px solid $grayColor;
+        border-radius: 10px;
+        height: 33px;
+        width: calc(85% - 5px);
+        transition: .3s ease;
+        &:focus {
+            outline: none;
+            border: 1px solid $blueColor;
+          }
+}
+
+    .button-search {
+        margin-top: 10px;
+@include flex-center();
+
+button {
+    margin: 10px 15px;
+    cursor: pointer;
+    height: 50px;
+    width: 240px;
+    background-color: $blueColor;
+    font-size: $fontSizeButton;
+    font-weight: 700;
+    padding: 5px;
+    color: $whiteColor;
+    border: none;
+    border-radius: 18px;
+    text-align: center;
+    transition: .2s ease;
+
+    &:hover {
+        filter: brightness(92%);
+    }
+}
+    }
+
+
+
+
+    #switch-button {
+        position: absolute;
+        right: 1.5rem;
+        top: 46%;
+        transform: translateY(-50%);
+
+   i {
+    color: $blueColor;
+    font-size: $fontSizep;
+    transition: .3s ease;
+
+   }
+
+   button {
+    background-color: $whiteColor3;
+    border-radius: 10px;
+    border: 1px solid $blueColor;
+    cursor: pointer;
+    width: 24px;
+    height: 33px;
+    transition: .3s ease;
+&:hover{
+    background-color: $blueWhiteColor2;
+}
+
+   }
+
+
+    }
+
+// Home/Oferte
+
+
+
+@media (max-width: 1068px) {
+    #switch-button{
+        right: 1.5rem;
+        top: 46%;
+
+        i{
+            padding: 5px;
+        }
+    }
+
+}
+
+
+
+
+@media (max-width: 576px) {
+    .formular{
+        width: 100%;
+        height: 100%;
+
+        h3{
+            font-size: $fontSizeH4;
+
+        }
+        h4{
+            font-size: $fontSizep;
+        }
+
+    }
+
+    .button-search{
+        width: 100%;
+        height: 100%;
+
+        button{
+            width: 150px;
+            height: 40px;
+            font-size: $fontSizeButtonMin;
+            text-align: center;
+            margin: 0px;
+        }
+    }
+}
+
+
+
+
+
+
+@media (max-width: 576px) {
+    #switch-button{
+        right: 1.3rem;
+        top: 50%;
+
+        i{
+            padding: 5px;
+        }
+    }
+
+}
+
+
+
+
+.pages-home{
+@include flex-between();
+padding: 10px;
+width: 100%;
+height: 100%;
+text-align: center;
+
+
+.oferte {
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 20px;
+    @include flex-startC();
+background: url("https://fotooboimoi.ru/upload/iblock/da2/da2ac15150a3653dfdad1a56a11154f6.jpg");
+background-position: center;
+background-size: cover;
+height: 300px;
+width: 500px;
+background-repeat: no-repeat !important;
+
+h2 {
+    font-size: $fontSizeH2;
+    color: $blueColor;
+    font-weight: 700;
+transition: .2s ease;
+
+&:hover{
+    color: $grayColor;
+}
+}
+
+a{
+    color: $blueColor;
+transition: .3s ease;
+&:hover{
+    color: $grayColor;
+}
+}
+
+}
+
+// Home/Information
+.information {
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 20px;
+    @include flex-startC();
+background: url("https://w.forfun.com/fetch/29/2983529ab8a59a77eb4c04e58d180618.jpeg?w=2500");
+background-position: center;
+background-size: cover;
+height: 300px;
+width: 500px;
+background-repeat: no-repeat !important;
+
+
+
+
+
+h2 {
+    font-size: $fontSizeH2;
+    color: $blueColor;
+    font-weight: 700;
+
+
+    &:hover{
+        color: $grayColor;
+    }
+
+}
+
+a{
+    color: $blueColor;
+transition: .3s ease;
+&:hover{
+    color: $grayColor;
+}
+}
+}
+
+}
+
+@media (max-width: 1068px) {
+    .pages-home{
+        width: 100%;
+        height: 100%;
+
+      @include flex-column();
+
+      .oferte, .information{
+        margin: 20px;
+        width: 550px;
+        height: 250px;
+        h2{
+            font-size: $fontSizeH3;
+          }
+      }
+
+    }
+
+}
+
+
+@media (max-width: 576px) {
+    .pages-home{
+padding: 10px;
+        width: 100%;
+        height: 100%;
+      @include flex-column();
+
+      .oferte, .information{
+        width:340px;
+        height: 180px;
+        h2{
+            font-size: $fontSizeH4;
+          }
+      }
+
+    }
+
+}
+
+
+
+
+.pages-home2{
+    @include flex-between();
+    padding: 10px;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+
+    .despre-back {
+        padding: 5px;
+        cursor: pointer;
+        border-radius: 20px;
+        @include flex-startC();
+    background: url("../Images/DPK9.jpg");
+    background-position: center;
+    background-size: cover;
+    height: 300px;
+    width: 600px;
+
+    background-repeat: no-repeat !important;
+
+    h2 {
+        font-size: $fontSizeH2;
+        color: $blueColor;
+        font-weight: 700;
+        &:hover{
+            color: $grayColor;
+        }
+    }
+    a{
+        color: $blueColor;
+    transition: .3s ease;
+    &:hover{
+        color: $grayColor;
+    }
+    }
+    }
+
+
+
+    // Home/Information
+    .info-contact {
+        padding: 5px;
+        cursor: pointer;
+        border-radius: 20px;
+        @include flex-startC();
+    background: url("../Images/tren6.jpg");
+    background-position: center;
+    background-size: cover;
+    height: 300px;
+    width: 600px;
+    background-repeat: no-repeat !important;
+
+
+
+
+
+    h2 {
+        font-size: $fontSizeH2;
+        color: $blueColor;
+        font-weight: 700;
+        &:hover{
+            color: $grayColor;
+        }
+    }
+
+    a{
+        color: $blueColor;
+    transition: .3s ease;
+    &:hover{
+        color: $grayColor;
+    }
+    }
+    }
+
+    }
+
+
+
+
+    @media (max-width: 1068px) {
+        .pages-home2{
+            width: 100%;
+            height: 100%;
+          @include flex-column();
+
+          .despre-back, .info-contact{
+            margin: 20px;
+            width: 550px;
+            height: 250px;
+            h2{
+                font-size: $fontSizeH3;
+              }
+          }
+
+        }
+
+    }
+
+
+
+    @media (max-width: 576px) {
+        .pages-home2{
+    padding: 10px;
+            width: 100%;
+            height: 100%;
+          @include flex-column();
+
+          .despre-back, .info-contact{
+            margin: 20px;
+            width:340px;
+            height: 180px;
+            h2{
+                font-size: $fontSizeH4;
+              }
+          }
+
+        }
+
+    }
+
+
+
+
+
+
+
+// SearchResult
+
+
+.result-search {
+    margin: auto;
+    @include flex-column2();
+background: url("https://rail-research.europa.eu/wp-content/uploads/2021/03/train_highspeed_blurry_bluefilter40-scaled-e1618215603367.jpg");
+background-position: center;
+background-size: cover;
+height: 440px;
+width:100%;
+filter: brightness(130%);
+background-repeat: no-repeat !important;
+
+h2 {
+    font-size: $fontSizeH2;
+    color: $blueColor;
+    font-weight: 800;
+}
+
+
+
+
+}
+// Trenuri Anulate
+
+.result-search2 {
+    margin: auto;
+    @include flex-column2();
+background: url("https://conversationstation.co.za/wp-content/uploads/2018/11/Conversation-Station_Warning-Light.jpg");
+background-position: center;
+background-size: cover;
+height: 440px;
+width:100%;
+filter: brightness(130%);
+background-repeat: no-repeat !important;
+
+h2 {
+    font-size: $fontSizeH2;
+    color: $redColor;
+    font-weight: 800;
+}
+
+
+
+
+}
+
+
+
+
+
+
+.search_error {
+margin: auto;
+    height: 70px;
+    width: 250px;
+    padding: 10px 20px;
+    background-color: $blueWhiteColor2;
+    border-radius: 15px;
+    text-align: center;
+}
+
+
+
+p {
+    font-size: $fontSizep;
+    color: $redColor;
+    font-weight: 700;
+
+}
+
+
+
+
+.route-container{
+    gap: 5px;
+    padding: 10px 5px;
+background-color: $whiteColor2;
+h3{
+    font-size: $fontSizeH3;
+    font-weight: 700;
+    color: $blueColor;
+
+            }
+
+
+
+    .train_number{
+        border-radius: 10px;
+        padding: 10px 10px;
+    background-color: $blueWhiteColor;
+        text-align: center;
+    width: 100%;
+    height: 100%;
+        @include flex-between();
+        @include flex-reverse2();
+
+        h4 {
+            text-align: center;
+            font-size: $fontSizeH4;
+            color: $blueColor;
+            font-weight: 600;
+        }
+    img{
+        height: 74px;
+        border-radius: 50%;
+    }
+    span{
+        color:$blueColor;
+        font-size: 25px;
+    }
+    }
+
+
+    .train_info{
+    background-color: $blueWhiteColor2;
+        padding: 10px 15px;
+        text-align: center;
+        width: 100%;
+        height: 100%;
+        @include flex-between();
+        button {
+            margin: 10px 15px;
+            cursor: pointer;
+            height: 40px;
+            width: 200px;
+            background-color: $blueColor;
+            font-size: $fontSizeButtonMin;
+            font-weight: 700;
+            padding: 5px;
+            color: $whiteColor;
+            border: none;
+            border-radius: 18px;
+            text-align: center;
+            transition: .2s ease;
+
+        &:hover {
+            filter: brightness(92%);
+        }
+
+        h3{
+font-size: $fontSizeH3;
+font-weight: 700;
+color: $blueColor;
+
+        }
+    }
+
+
+
+    }
+
+}
+
+
+
+.train_infoCancel{
+    padding: 10px;
+    background-color: $redColor;
+    width: 100%;
+height: 100%;
+@include flex-between();
+    .station {
+        @include flex-reverse2();
+        @include flex-column();
+
+        .csa{
+            text-align: center;
+            font-size: $fontSizeH3;
+            color: $whiteColor3;
+            font-weight: 600;
+        }
+    }
+}
+
+.duration {
+width: auto;
+height: auto;
+}
+
+p{
+    font-size: $fontSizep;
+    font-weight: 600;
+    color: $grayColor;
+
+}
+
+
+
+@media (max-width: 1068px) {
+.route-value{
+    width: 100%;
+    height: 100%;
+    @include flex-column();
+    .train_number{
+        @include flex-column();
+        width: 100%;
+        height: 100%;
+      gap: 12px 15px;
+    }
+    .train_info{
+        width: 100%;
+        height: 100%;
+      @include flex-column();
+
+
+
+    }
+}
+
+}
+
+
+
+@media (max-width: 576px) {
+.route-value1{
+    @include flex-column();
+    width: 100%;
+height: 100%;
+    .train_number{
+@include flex-column();
+        gap: 25px 15px;
+        padding: 10px;
+
+      }
+      .train_info{
+          width: 100%;
+          height: 100%;
+        @include flex-column();
+
+
+
+      }
+}
+
+}
+
+
+
+
+// Front
+// Abonament
+.abonamente{
+    background: url("https://fotooboimoi.ru/upload/iblock/da2/da2ac15150a3653dfdad1a56a11154f6.jpg") ;
+    background-repeat: no-repeat !important;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 360px;
+@include flex-column();
+h2 {
+    font-size: $fontSizeH2;
+    color: $redColor;
+    font-weight: 800;
+}
+    .swiper {
+        height: 300px;
+        width:950px;
+    border: 1px solid $blueColor;
+    box-shadow: 1px 1px 4px 4px solid $grayColor;
+    border-radius: 20px;
+    }
+
+      .swiper-slide{
+    width: auto;
+    height: auto;
+    img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+
+    }
+
+
+
+    }
+
+
+}
+
+@media (max-width: 1068px) {
+  .abonamente{
+    width: 100%;
+    height: 100%;
+h2{
+    text-align: center;
+    font-size: $fontSizeH4;
+}
+    .swiper{
+        width: 100%;
+height: 100%;
+    }
+
+}
+  }
+
+
+  @media (max-width: 576px) {
+    .abonamente{
+      width: 100%;
+      height: 100%;
+
+      .swiper{
+          width: 100%;
+  height: 100%;
+      }
+
+  }
+    }
+
+
+
+.info-abonament {
+    padding: 15px;
+    width: 100%;
+    height: 100%;
+@include flex-center();
+}
+.modal_div {
+
+    @include flex-column();
+    height: 160px;
+    width: 550px;
+    padding: 15px 25px;
+    background-color: $blueWhiteColor;
+    border-radius: 15px;
+    text-align: center;
+    p {
+        text-align: center;
+        font-size: $fontSizep;
+        color: $redColor;
+        font-weight: 700;
+    }
+
+    h4 {
+        text-align: center;
+        font-size: $fontSizeH4;
+        color: $blueColor;
+    }
+
+    h3{
+        font-size: $fontSizeH3;
+        font-weight: 700;
+        color: $blueColor;
+        text-align: center;
+    }
+}
+
+.back-info{
+    background: url("https://s3-us-west-2.amazonaws.com/eagleagent-orig/uploads%2F1678754324429-0krnd7w3bubj-41605c4436d86559d05f89e11b405b74%2FTrain.jpg") ;
+    background-repeat: no-repeat !important;
+    background-size: cover;
+    background-position: center;
+    width: 900px;
+    border-radius: 20px;
+    border-top: 4px solid $yellowColor;
+             border-bottom: 4px solid rgb(255, 153, 0);
+             border-left: 4px solid $blueColor;
+             border-right: 4px solid $blueColor;
+    height: 340px;
+margin: auto;
+
+h3 {
+    text-align: center;
+    font-size: $fontSizeH3;
+    color: $blueColor;
+}
+
+.m-foto{
+    @include flex-endC();
+    width: 100%;
+    height: 100%;
+padding: 25px;
+    img{
+    height: 140px;
+    border-radius: 50%;
+    }
+}
+
+
+}
+
+
+
+
+@media (max-width: 1068px) {
+    .back-info{
+        width: 100%;
+        height: 100%;
+
+        h3{
+            font-size: $fontSizeH4;
+
+        }
+    }
+    .m-foto{
+        width: 100%;
+        height: 100%;
+   img{
+    height: 100px;
+   }
+    }
+    .info-abonament{
+      width: 100%;
+      height: 100%;
+h3{
+font-size: $fontSizeH4;
+}
+
+p{
+    font-size: $fontSizep;
+    }
+  }
+    }
+
+
+
+    @media (max-width: 576px) {
+        .back-info{
+            width: 100%;
+            height: 100%;
+
+            h3{
+                font-size: $fontSizeH4;
+
+            }
+        }
+        .m-foto{
+            width: 100%;
+            height: 100%;
+       img{
+        height:50px;
+       }
+        }
+        .info-abonament{
+          width: 100%;
+          height: 100%;
+    h3{
+    font-size: $fontSizeH4;
+    }
+
+    p{
+        font-size: $fontSizep;
+        }
+      }
+        }
+
+
+
+
+
+
+
+.reguli {
+    padding: 15px;
+    width: 100%;
+    height: 100%;
+@include flex-center();
+
+.modal_div {
+
+    @include flex-column();
+    height: 100%;
+    width: 900px;
+    padding: 15px 25px;
+    background-color: $blueWhiteColor;
+    border-radius: 15px;
+    text-align: center;
+    p {
+        margin: 5px;
+        text-align: center;
+        font-size: $fontSizep;
+        color: $redColor;
+        font-weight: 700;
+    }
+
+li{
+    color: $blueColor;
+}
+
+}
+}
+
+
+@media (max-width: 1068px) {
+    .modal_div {
+height: 100%;
+width: 100%;
+
+    }
+
+
+
+}
+
+
+@media (max-width: 576px) {
+    .modal_div {
+height: 100%;
+width: 100%;
+
+    }
+
+
+
+}
+
+.buy{
+width: 100%;
+height: 100%;
+    .abonament-alls{
+        background-color: $blueWhiteColor2;
+            padding: 10px 15px ;
+            text-align: center;
+            margin: auto;
+            width: 100%;
+            height: 100%;
+            @include flex-between();
+            button {
+                padding: 10px;
+                cursor: pointer;
+                height: 50px;
+                width: 250px;
+                background-color: $blueColor;
+                font-size: $fontSizeButtonMin;
+                font-weight: 700;
+                padding: 5px;
+                color: $whiteColor;
+                border: none;
+                border-radius: 18px;
+                text-align: center;
+                transition: .2s ease;
+
+            &:hover {
+                filter: brightness(92%);
+            }
+        }
+
+}
+
+
+
+
+
+img {
+    height: 200px;
+    border: 1px solid $blueColor;
+    border-radius: 15px;
+}
+}
+
+@media (max-width: 1068px) {
+    .buy {
+        height: 100%;
+width: 100%;
+
+img{
+    width:100%;
+    height: 100%;
+      border: 1px solid $blueColor;
+      border-radius: 15px;
+}
+    }
+
+    .abonament-alls{
+        @include flex-column();
+        margin: 10px 14px;
+        width: 100%;
+        height: 100%;
+        button {
+            margin: 20px;
+        }
+        }
+
+
+}
+
+
+
+
+@media (max-width: 576px) {
+    .buy {
+        height: 100%;
+width: 100%;
+
+
+    .abonament-alls{
+        @include flex-column();
+        width: 100%;
+        height: 100%;
+        button {
+            margin: 20px;
+            height: 40px;
+            width: 200px;
+            font-size: $fontSizeButtonMin;
+        }
+
+      }
+        img{
+            width:100%;
+            height: 100%;
+              border: 1px solid $blueColor;
+              border-radius: 15px;
+        }
+
+}
+
+}
+
+.sel{
+    margin: auto;
+    height: 100%;
+    width: 900px;
+    padding: 15px 25px;
+    background-color: $blueWhiteColor2;
+    border-radius: 15px;
+    text-align: center;
+
+    h3 {
+        text-align: center;
+        font-size: $fontSizeH3;
+        color: $blueColor;
+    }
+
+
+}
+
+@media (max-width: 1068px) {
+    .sel {
+height: 100%;
+width: 100%;
+
+
+    }
+
+}
+
+
+@media (max-width: 576px) {
+    .sel{
+height: 100%;
+width: 100%;
+
+    }
+
+
+
+}
+
+
+
+.formular-abonament.show{
+    display: block;
+    max-height: 1000px;
+    opacity: 1;
+}
+
+
+
+
+
+.formular-abonament {
+background-color: $blueWhiteColor;
+    display: none;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+    opacity: 0;
+
+}
+ .all-log {
+    @include flex-column();
+
+
+
+    h3{
+        text-align: center;
+        font-size: $fontSizeH3;
+        color: $grayColor;
+    }
+}
+.login_form {
+    margin: auto;
+@include flex-column();
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+
+    form {
+
+@include flex-column();
+
+    }
+
+    input {
+        margin: 5px;
+        border: none;
+        width: 275px;
+        font-weight: 600;
+        padding: 5px;
+        font-size: $fontSizeInput;
+        border: 1px solid $blueColor;
+        border-radius: 10px;
+        height: auto;
+        transition: .3s ease;
+
+        &:focus {
+            outline: none;
+            border: 1px solid $grayColor;
+        }
+
+
+    }
+
+
+    .button-send {
+ @include flex-center();
+ padding: 12px;
+
+        button {
+            cursor: pointer;
+            height: 40px;
+            width: 275px;
+            background-color: $blueColor;
+            font-size: $fontSizeButtonMin;
+            font-weight: 700;
+            color: $whiteColor2;
+            border: none;
+            border-radius: 15px;
+            text-align: center;
+            transition: .2s ease;
+
+            &:hover {
+                filter: brightness(92%);
+            }
+        }
+
+
+    }
+
+    .prices{
+padding: 3px;
+width: auto;
+height: auto;
+
+button{
+    border: none;
+    border-radius: 15px;
+    text-align: center;
+    transition: .2s ease;
+    height: 35px;
+    width: 120px;
+    background-color: $redColor;
+    font-size: $fontSizeButtonMin;
+    font-weight: 700;
+    color: $whiteColor2;
+}
+    }
+
+
+}
+
+
+
+@media (max-width: 576px) {
+    .login_form{
+        width: 100%;
+        height: 100%;
+
+    }
+.button-send{
+button{
+    height: 40px;
+    width: 200px;
+font-size: $fontSizeButton;
+}
+}
+}
+
+
+
+
+
+// Intrebari frecvente
+
+.intrebari {
+    padding: 15px;
+    width: 100%;
+    height: 100%;
+@include flex-center();
+
+h3{
+    text-align: center;
+    font-size: $fontSizeH3;
+    color: $whiteColor3;
+}
+.modal_div {
+
+    @include flex-column();
+    height: 100%;
+    width: 900px;
+    padding: 15px 25px;
+    background-color: $blueColor;
+    border-radius: 15px;
+    text-align: center;
+}
+
+img {
+    border-radius: 50%;
+    height: 150px;
+}
+}
+
+
+
+.question{
+    width: 100%;
+    height: 100%;
+        .questions-all{
+            background-color: $blueWhiteColor;
+                text-align: center;
+                margin: auto;
+width: 900px;
+padding: 10px 21px;
+border-radius: 15px;
+                height: 95px;
+                @include flex-between();
+
+                button {
+                    cursor: pointer;
+                    height: 45px;
+                    width: 55px;
+                    background-color: $grayColor;
+                    font-size: $fontSizeButtonMin;
+                    font-weight: 700;
+                    color: $whiteColor;
+                    border: none;
+                    border-radius: 15px;
+                    text-align: center;
+                    transition: .2s ease;
+
+                &:hover {
+                   background-color: $blueColor;
+                }
+            }
+    }
+
+    img {
+        height: 200px;
+        border: 1px solid $blueColor;
+        border-radius: 15px;
+    }
+
+
+
+
+        h3 {
+            text-align: center;
+            font-size: $fontSizeH3;
+            color: $blueColor;
+        }
+
+
+
+
+    }
+
+    @media (max-width: 1068px) {
+        .question {
+            .formular-question{
+                width: 100%;
+                height: 100%;
+               }
+            .questions-all{
+                @include flex-column();
+                height: 100%;
+                width: 100%;
+            }
+
+
+        }
+    }
+
+
+    @media (max-width: 576px) {
+        .question {
+   .formular-question{
+    width: 100%;
+    height: 100%;
+   }
+   h3{
+    font-size: $fontSizeH4;
+   }
+            .questions-all{
+                @include flex-column();
+                height: 100%;
+                width: 100%;
+            button{
+                height: 30px;
+width: 40px;
+font-size: $fontSizep;
+font-weight: 600;
+            }
+            }
+
+
+        }
+    }
+
+
+
+    .formular-question.show{
+        display: block;
+        max-height: 1000px;
+        opacity: 1;
+    }
+
+
+    .formular-question {
+        margin: 3px auto;
+        height: 100%;
+        border-radius: 5px;
+        text-align: center;
+        width: 900px;
+        background-color: $blueWhiteColor2;
+            display: none;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+            opacity: 0;
+
+            p{
+                text-align: center;
+                margin: 7px;
+                color: #161616;
+                font-size: $fontSizep;
+                font-weight: 500;
+            }
+
+
+
+        h3 {
+            margin: 10px;
+            text-align: center;
+            font-size: $fontSizeH3;
+            color: $blueColor;
+        }
+a{
+    color: $blueColor;
+}
+
+        }
+
+
+        // Oferte
+.banner{
+    padding: 5px 14px;
+    @include flex-startC();
+    background: url("https://mpg-machining.com/img/home/Ferrovial.jpg") ;
+    background-repeat: no-repeat !important;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 400px;
+
+    h2 {
+        font-size: $fontSizeH2;
+        color: $blueColor;
+        font-weight: 700;
+    }
+}
+
+.banners {
+    @include flex-column();
+    width: 100%;
+    height: 100%;
+img{
+    object-fit: cover;
+
+    height:30%;
+    width: 60%;
+    border: 2px solid $yellowColor;
+    border-radius: 15px;
+    transition: .2s ease;
+&:hover{
+    border: 2px solid $grayColor;
+}
+}
+
+
+
+.modal_div {
+    @include flex-center();
+margin: auto;
+    height: 160px;
+    width: 550px;
+    padding: 15px 25px;
+    border: 3px solid $yellowColor;
+    background-color: $blueColor;
+    border-radius: 15px;
+    text-align: center;
+
+
+}
+
+
+h2{
+    color: $whiteColor3;
+    font-size: $fontSizeH2;
+    font-weight: 700;
+    text-align: center;
+    }
+
+.ims{
+
+
+        height:610px;
+        width: 60%;
+        border: 2px solid $yellowColor;
+        border-radius: 15px;
+        transition: .2s ease;
+    &:hover{
+        border: 2px solid $blueColor;
+    }
+}
+
+
+a{
+    text-align: center;
+}
+}
+
+
+@media (max-width: 1068px) {
+    .banner{
+@include flex-column();
+
+h2{
+    color: $yellowColor;
+    font-weight: bold;
+}
+
+
+    }
+    .banners{
+        width: 100%;
+        height: 100%;
+        .modal_div{
+            @include flex-column();
+            height: 30%;
+
+        }
+        h2{
+    font-size: $fontSizeH3;
+        }
+    }
+}
+
+
+@media (max-width: 576px) {
+    .banner{
+        h2{
+            color: $yellowColor;
+            font-weight: bold;
+            text-shadow: 2px 2px 3px $grayColor;
+        }
+@include flex-column();
+
+    }
+    .banners{
+        width: 100%;
+        height: 100%;
+        .modal_div{
+            width: 100%;
+            @include flex-column();
+            height: 30%;
+
+        }
+        h2{
+    font-size: $fontSizeH4;
+        }
+    }
+}
+
+
+
+
+
+.banners2 {
+    @include flex-column();
+    width: 100%;
+    height: 100%;
+
+
+
+.modal_div {
+    @include flex-center();
+margin: auto;
+    height: 100%;
+    width:60%;
+    padding: 15px 25px;
+    border: 3px solid $blueColor;
+    background-color: $yellowColor;
+    border-radius: 15px;
+
+
+}
+
+h4{
+color: $blueColor;
+font-size: $fontSizeH4;
+font-weight: 600;
+text-align: center;
+}
+
+h3{
+    color: $blueColor;
+    font-size: $fontSizeH3;
+    font-weight: 700;
+    text-align: center;
+    }
+p{
+    color: $blueColor;
+font-size: $fontSizep;
+font-weight: 700;
+text-align: center;
+}
+}
+
+
+
+@media (max-width: 1068px) {
+    .banners2 {
+            .modal_div{
+                @include flex-column();
+                width: 100%;
+                height: 100%;
+            }
+           .ims{
+            width: 100%;
+            height: 100%;
+           }
+
+
+    }
+}
+@media (max-width: 576px) {
+    .banners2 {
+            .modal_div{
+                @include flex-column();
+                width: 100%;
+                height: 100%;
+            }
+           .ims{
+            width: 100%;
+            height: 100%;
+        img{
+            width: 100%;
+            height: 100%;
+        }
+        }
+
+
+    }
+}
+
+// Destinatii turistice
+
+
+
+
+.travel{
+    background: url("../Images/DPK3.jpg") ;
+    background-repeat: no-repeat !important;
+    background-size: cover;
+    background-position: center;
+    height: 550px;
+@include flex-column();
+h2 {
+    font-size: $fontSizeH2;
+    color: $whiteColor2;
+    text-shadow: 1px 2px 2px $grayColor;
+    font-weight: 800;
+}
+    .swiper {
+
+        height: 100%;
+        width:100%;
+    border: 1px solid $blueColor;
+    box-shadow: 1px 1px 4px 4px solid $grayColor;
+    border-radius: 20px;
+    }
+
+      .swiper-slide{
+    width: auto;
+    height: auto;
+    img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+
+    }
+
+
+
+    }
+
+
+}
+
+
+.obj{
+    margin: auto;
+    height: 100%;
+    width: 900px;
+    padding: 15px 25px;
+    background-color: $yellowColor;
+    border-radius: 15px;
+    text-align: center;
+
+    h3 {
+        text-align: center;
+        font-size: $fontSizeH3;
+        color: $blueColor;
+    }
+
+
+}
+
+
+@media (max-width: 1068px) {
+    .obj{
+     height: 100%;
+     width: 100%;
+    }
+    .travel {
+            @include flex-column();
+            height: 100%;
+            width: 100%;
+
+
+    }
+}
+
+@media (max-width: 576px) {
+    .obj{
+     height: 100%;
+     width: 100%;
+     h3{
+        font-size: $fontSizeH4;
+     }
+    }
+    .travel {
+            @include flex-column();
+            height: 100%;
+            width: 100%;
+
+h2{
+    font-size: $fontSizeH3;
+}
+    }
+}
+
+
+
+
+.trv{
+    width: 100%;
+    height: 100%;
+    .formular-abonament{
+        width: 100%;
+        height: 100%;
+        .all-log{
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+        .travel-alls{
+            background-color: $blueWhiteColor2;
+                padding: 10px 15px ;
+                text-align: center;
+                margin: auto;
+                width: 100%;
+                height: 100%;
+                @include flex-between();
+
+                button {
+                    cursor: pointer;
+                    height: 50px;
+                    width: 250px;
+                    background-color: $blueColor;
+                    font-size: $fontSizeButtonMin;
+                    font-weight: 700;
+                    padding: 5px;
+                    color: $whiteColor;
+                    border: none;
+                    border-radius: 18px;
+                    text-align: center;
+                    transition: .2s ease;
+
+                &:hover {
+                    filter: brightness(92%);
+                }
+            }
+
+    }
+.txth2{
+    h2{
+        font-size: $fontSizeH2;
+        color: $blueColor;
+        text-align: center;
+        font-weight: 800;
+    }
+
+    h4{
+        font-size: $fontSizeH4;
+        color: $grayColor;
+        text-align: center;
+        font-weight: 600;
+    }
+
+    p{
+        font-size: $fontSizep;
+        color: $blueColor;
+        text-align: center;
+        font-weight: 600;
+    }
+}
+
+
+
+            .town{
+                width: 550px;
+                height: 280px;
+                border: 1px solid $blueColor;
+                border-radius: 15px;
+            }
+
+            .prs{
+                padding: 0 20px;
+                font-size: $fontSizep;
+                font-weight: 500;
+                text-align: center;
+                margin:10px 20px;
+                color: $grayColor;
+            }
+        }
+
+
+
+        @media (max-width: 1068px) {
+            .trv{
+                    @include flex-column();
+                    height: 100%;
+                    width: 100%;
+.formular-abonament{
+    .all-log{
+        width: 100%;
+        height: 100%;
+
+    }
+}
+
+.town{
+    height: 100%;
+    width: 100%;
+}
+
+            }
+        }
+
+
+        @media (max-width: 576px) {
+            .trv{
+                    @include flex-column();
+                    height: 100%;
+                    width: 100%;
+.formular-abonament, .formular-abonament.show{
+    .all-log{
+        width: 100%;
+        height: 100%;
+
+}
+}
+.town{
+    height: 100%;
+    width: 100%;
+}
+            }
+                    }
+
+
+
+        @media (max-width: 1068px) {
+            .travel-alls{
+                    @include flex-column();
+                    height: 100%;
+                    width: 100%;
+                    button{
+                        height: 45px;
+                        width: 170px;
+                        font-size: $fontSizeH4;
+                    }
+.town{
+    height: 100%;
+    width: 100%;
+}
+
+            }
+        }
+
+        @media (max-width: 576px) {
+            .travel-alls{
+                    @include flex-column();
+                    height: 100%;
+                    width: 100%;
+                    button{
+                        height: 45px;
+                        width: 170px;
+                        font-size: $fontSizeH4;
+                    }
+.town{
+    height: 100%;
+    width: 100%;
+}
+            }
+
+
+
+        }
+
+// User
+
+
+.register_form {
+
+    padding:2px 15px;
+    margin: auto;
+    @include flex-column2();
+background: url("https://lexinform.com.ua/wp-content/uploads/2020/11/beautiful-blue-passenger-train-at-the-railway-stat-PBHGTZH-min-scaled.jpg");
+background-position: center;
+background-size: cover;
+height:330px;
+width:100%;
+background-repeat: no-repeat !important;
+    width: 100%;
+    height: 100%;
+    padding: 15px;
+    @include flex-center();
+
+    .auth_user {
+    border: 1px solid $blueWhiteColor2;
+        @include flex-center();
+padding: 10px 15px;
+        background-color: $whiteColor;
+        height: 100%;
+        position: relative;
+        width: 650px;
+        border-radius: 15px;
+        .errors {
+            margin: 3px;
+            text-align: center;
+            font-size: $fontSizep;
+            color: $redColor;
+            font-weight: 700;
+        }
+        form {
+            width: 100%;
+            height: 100%;
+           text-align:center;
+        }
+
+       input {
+        width: 215px;
+        margin:5px;
+        border: none;
+            font-weight: 600;
+            padding: 5px;
+            font-size: $fontSizeInput;
+            border: 1px solid $blueColor;
+            border-radius: 10px;
+            height: auto;
+            transition: .3s ease;
+            &:focus {
+                outline: none;
+                border: 1px solid $grayColor;
+              }
+
+
+    }
+    .login_div {
+        height: 130px;
+        width: 900px;
+        margin: 5px 10px;
+        padding: 15px 25px;
+        background-color: $blueWhiteColor2;
+        border-radius: 15px;
+        text-align: center;
+    }
+
+    h3 {
+        font-size: $fontSizeH3;
+        color: $blueColor;
+        font-weight: 600;
+
+    }
+
+   p {
+        font-size: $fontSizep;
+        color: $grayColor;
+        font-weight: 500;
+
+    }
+
+    a{
+        margin: 5px;
+        font-size: $fontSizeH4;
+        color: $grayColor;
+        font-weight: 500;
+transition: .2s ease;
+    &:hover{
+        color: $blueColor;
+    }
+    }
+
+
+    }
+
+    .button-send {
+    margin-top: 10px;
+    @include flex-center();
+    button {
+    margin: 10px 15px;
+    cursor: pointer;
+    height: 40px;
+    width: 215px;
+    background-color: $blueColor;
+    font-size: $fontSizeButtonMin;
+    font-weight: 700;
+    padding: 5px;
+    color: $whiteColor2;
+    border: none;
+    border-radius: 15px;
+    text-align: center;
+    transition: .2s ease;
+
+    &:hover {
+    filter: brightness(92%);
+    }
+    }
+
+    }
+    .password-container2 {
+        position: relative;
+            display: inline-block;
+
+            .toggle-password {
+                position: absolute;
+                top: 50%;
+                right: 10px;
+                transform: translateY(-50%);
+                cursor: pointer;
+                pointer-events: auto;
+
+                i {
+                  color: $blueColor;
+                }
+            }
+        }
+
+
+
+}
+
+
+
+@media(max-width: 1068px) {
+    .register_form{
+
+        width: 100%;
+        height: 100%;
+        margin: auto;
+    @include flex-column();
+
+    .auth_user{
+        @include flex-column();
+        width:100%;
+        .login_div {
+            height:100%;
+            width: 100%;
+        }
+    }
+}
+}
+
+
+
+
+@media(max-width: 576px) {
+    .register_form{
+        width: 100%;
+        height: 100%;
+        margin: auto;
+    @include flex-column();
+
+    .auth_user{
+        @include flex-column();
+        width:100%;
+        .login_div {
+            height:100%;
+            width: 100%;
+        }
+    }
+}
+}
+
+
+
+// User/Login
+.register_login{
+    padding:2px 15px;
+    margin: auto;
+    @include flex-column2();
+background: url("https://www.bdbpitmans.com/wp-content/uploads/Train-track.jpg");
+background-position: center;
+background-size: cover;
+height:330px;
+width:100%;
+background-repeat: no-repeat !important;
+
+h2 {
+    text-align: center;
+    font-size: $fontSizeH2;
+    color: $blueColor;
+    font-weight: 700;
+
+}
+
+
+}
+
+// Formular Login
+
+
+.login_form{
+    width: 100%;
+    height: 100%;
+    padding: 15px;
+    @include flex-column();
+
+
+.auth_login {
+    border: 1px solid $blueWhiteColor2;
+        @include flex-column();
+padding: 5px 15px;
+        background-color: $whiteColor;
+        height: 100%;
+        position: relative;
+        width:620px;
+        border-radius: 15px;
+h3{
+    text-align: center;
+    font-size: $fontSizeH3;
+    color: $grayColor;
+    font-weight: 700;
+}
+        form {
+           text-align:center;
+        }
+
+       input {
+        margin:5px;
+        border: none;
+        width: 215px;
+            font-weight: 600;
+            padding: 5px;
+            font-size: $fontSizeInput;
+            border: 1px solid $blueColor;
+            border-radius: 10px;
+            height: auto;
+            transition: .3s ease;
+            &:focus {
+                outline: none;
+                border: 1px solid $grayColor;
+              }
+
+
+    }
+
+    .password-container {
+        position: relative;
+            display: inline-block;
+
+            .toggle-password {
+                position: absolute;
+                top: 50%;
+                right: 10px;
+                transform: translateY(-50%);
+                cursor: pointer;
+                pointer-events: auto;
+
+                i {
+                  color: $blueColor;
+                }
+            }
+        }
+
+    }
+
+    .button-send {
+    @include flex-center();
+    button {
+    cursor: pointer;
+    height: 40px;
+    width: 215px;
+    background-color: $blueColor;
+    font-size: $fontSizeButtonMin;
+    font-weight: 700;
+    color: $whiteColor2;
+    border: none;
+    border-radius: 15px;
+    text-align: center;
+    transition: .2s ease;
+
+    &:hover {
+    filter: brightness(92%);
+    }
+    }
+
+    }
+
+    .delete_account{
+        text-align: center;
+        margin: auto;
+        height: 100%;
+        width: 100%;
+
+        #delete-user{
+    background-color: #d00000;
+    }
+
+    }
+
+}
+
+@media(max-width: 1068px) {
+    .register_login{
+        h2{
+            color: $whiteColor3;
+        }
+    }
+    .login_form{
+        margin: auto;
+    @include flex-column();
+
+    .auth_login{
+        width: 470px;
+        .login_div {
+            height:100%;
+        }
+    }
+
+    h2 {
+        font-size: $fontSizeH4;
+        color: $whiteColor3;
+        font-weight: 700;
+    }
+
+
+    }
+
+    }
+
+    @media(max-width: 576px) {
+        .register_login{
+            h2{
+                color: $whiteColor3;
+            }
+        }
+        .login_form{
+            margin: auto;
+        @include flex-column();
+
+        .auth_login{
+            width: 100%;
+            .login_div {
+                height:100%;
+            }
+        }
+
+        h2 {
+            font-size: $fontSizeH4;
+            color: $whiteColor3;
+            font-weight: 700;
+        }
+
+
+        }
+
+        }
+
+
+
+// Dashbord User
+
+.user-dashbord{
+    padding:2px 15px;
+    margin: auto;
+    @include flex-column2();
+background: url("https://www.era.europa.eu/sites/default/files/2023-06/European%20Rail%20Safety%20Days%202023%20Visual%20Carousel%20-%20Light.jpg");
+background-position: center;
+background-size: cover;
+height:360px;
+width:100%;
+background-repeat: no-repeat !important;
+
+h2{
+    text-align: center;
+    font-size: $fontSizeH2;
+    color: $redColor;
+    font-weight: 700;
+}
+}
+
+.user_info {
+    text-align: center;
+    margin: auto;
+    border: 1px solid $blueColor;
+        @include flex-column();
+padding:5px 2px;
+        background-color: $blueWhiteColor2;
+        height: 100%;
+        width: 520px;
+        border-radius: 15px;
+
+        h3 {
+            font-size: $fontSizeH3;
+            color: $blueColor;
+            font-weight: 600;
+        }
+
+        .button-send {
+            margin-top: 5px;
+            @include flex-center();
+            button {
+            margin: 10px 15px;
+            cursor: pointer;
+            height: 40px;
+            width: 160px;
+            background-color: $blueColor;
+            font-size: $fontSizeButtonMin;
+            font-weight: 700;
+            color: $whiteColor2;
+            border: none;
+            border-radius: 15px;
+            text-align: center;
+            transition: .2s ease;
+
+            &:hover {
+            filter: brightness(92%);
+            }
+            }
+
+            }
+
+
+
+
+
+            i {
+                border-radius: 10px;
+                background-color: $yellowColor;
+                padding: 5px;
+                width: 90px;
+                height: 72px;
+text-align: center;
+                border: 3px solid $grayColor;
+                font-size: 50px;
+                gap: 5px;
+                font-weight: 600;
+                color: $grayColor;
+              }
+
+
+
+
+
+
+}
+
+@media(max-width: 1068px) {
+    .user-dashbord,.user_info {
+        width: 100%;
+        height: 100%;
+        margin: auto;
+
+    h2 {
+        text-align: center;
+        font-size: $fontSizeH3;
+        color: $blueColor;
+        font-weight: 700;
+
+    }
+    }
+}
+
+
+@media(max-width: 576px) {
+    .user-dashbord,.user_info {
+        padding: 10px;
+        width: 100%;
+        height: 100%;
+        margin: auto;
+
+    h2 {
+        text-align: center;
+        font-size: $fontSizeH3;
+        color: $blueColor;
+        font-weight: 700;
+
+.register_form {
+
+    padding:2px 15px;
+    margin: auto;
+    @include flex-column2();
+background: url("https://lexinform.com.ua/wp-content/uploads/2020/11/beautiful-blue-passenger-train-at-the-railway-stat-PBHGTZH-min-scaled.jpg");
+background-position: center;
+background-size: cover;
+height:330px;
+width:100%;
+background-repeat: no-repeat !important;
+    width: 100%;
+    height: 100%;
+    padding: 15px;
+    @include flex-center();
+
+    .auth_user {
+    border: 1px solid $blueWhiteColor2;
+        @include flex-center();
+padding: 10px 15px;
+        background-color: $whiteColor;
+        height: 100%;
+        position: relative;
+        width: 650px;
+        border-radius: 15px;
+        .errors {
+            margin: 3px;
+            text-align: center;
+            font-size: $fontSizep;
+            color: $redColor;
+            font-weight: 700;
+        }
+        form {
+            width: 100%;
+            height: 100%;
+           text-align:center;
+        }
+
+       input {
+        width: 215px;
+        margin:5px;
+        border: none;
+            font-weight: 600;
+            padding: 5px;
+            font-size: $fontSizeInput;
+            border: 1px solid $blueColor;
+            border-radius: 10px;
+            height: auto;
+            transition: .3s ease;
+            &:focus {
+                outline: none;
+                border: 1px solid $grayColor;
+              }
+
+
+    }
+    .login_div {
+        height: 130px;
+        width: 900px;
+        margin: 5px 10px;
+        padding: 15px 25px;
+        background-color: $blueWhiteColor2;
+        border-radius: 15px;
+        text-align: center;
+    }
+
+    h3 {
+        font-size: $fontSizeH3;
+        color: $blueColor;
+        font-weight: 600;
+
+    }
+
+   p {
+        font-size: $fontSizep;
+        color: $grayColor;
+        font-weight: 500;
+
+    }
+
+    a{
+        margin: 5px;
+        font-size: $fontSizeH4;
+        color: $grayColor;
+        font-weight: 500;
+transition: .2s ease;
+    &:hover{
+        color: $blueColor;
+    }
+    }
+
+
+    }
+
+    .button-send {
+    margin-top: 10px;
+    @include flex-center();
+    button {
+    margin: 10px 15px;
+    cursor: pointer;
+    height: 40px;
+    width: 215px;
+    background-color: $blueColor;
+    font-size: $fontSizeButtonMin;
+    font-weight: 700;
+    padding: 5px;
+    color: $whiteColor2;
+    border: none;
+    border-radius: 15px;
+    text-align: center;
+    transition: .2s ease;
+
+    &:hover {
+    filter: brightness(92%);
+    }
+    }
+
+    }
+    .password-container2 {
+        position: relative;
+            display: inline-block;
+
+            .toggle-password {
+                position: absolute;
+                top: 50%;
+                right: 10px;
+                transform: translateY(-50%);
+                cursor: pointer;
+                pointer-events: auto;
+
+                i {
+                  color: $blueColor;
+                }
+            }
+        }
+
+
+
+}
+
+
+
+@media(max-width: 1068px) {
+    .register_form{
+
+        width: 100%;
+        height: 100%;
+        margin: auto;
+    @include flex-column();
+
+    .auth_user{
+        @include flex-column();
+        width:100%;
+        .login_div {
+            height:100%;
+            width: 100%;
+        }
+    }
+}
+}
+
+
+
+
+@media(max-width: 576px) {
+    .register_form{
+        width: 100%;
+        height: 100%;
+        margin: auto;
+    @include flex-column();
+
+    .auth_user{
+        @include flex-column();
+        width:100%;
+        .login_div {
+            height:100%;
+            width: 100%;
+        }
+    }
+}
+}
+
+
+
+// User/Login
+.register_login{
+    padding:2px 15px;
+    margin: auto;
+    @include flex-column2();
+background: url("https://www.bdbpitmans.com/wp-content/uploads/Train-track.jpg");
+background-position: center;
+background-size: cover;
+height:330px;
+width:100%;
+background-repeat: no-repeat !important;
+
+h2 {
+    text-align: center;
+    font-size: $fontSizeH2;
+    color: $blueColor;
+    font-weight: 700;
+
+}
+
+
+}
+
+// Formular Login
+
+
+.login_form{
+    width: 100%;
+    height: 100%;
+    padding: 15px;
+    @include flex-column();
+
+
+.auth_login {
+    border: 1px solid $blueWhiteColor2;
+        @include flex-column();
+padding: 5px 15px;
+        background-color: $whiteColor;
+        height: 100%;
+        position: relative;
+        width:620px;
+        border-radius: 15px;
+h3{
+    text-align: center;
+    font-size: $fontSizeH3;
+    color: $grayColor;
+    font-weight: 700;
+}
+        form {
+           text-align:center;
+        }
+
+       input {
+        margin:5px;
+        border: none;
+        width: 215px;
+            font-weight: 600;
+            padding: 5px;
+            font-size: $fontSizeInput;
+            border: 1px solid $blueColor;
+            border-radius: 10px;
+            height: auto;
+            transition: .3s ease;
+            &:focus {
+                outline: none;
+                border: 1px solid $grayColor;
+              }
+
+
+    }
+
+    .password-container {
+        position: relative;
+            display: inline-block;
+
+            .toggle-password {
+                position: absolute;
+                top: 50%;
+                right: 10px;
+                transform: translateY(-50%);
+                cursor: pointer;
+                pointer-events: auto;
+
+                i {
+                  color: $blueColor;
+                }
+            }
+        }
+
+    }
+
+    .button-send {
+    @include flex-center();
+    button {
+    cursor: pointer;
+    height: 40px;
+    width: 215px;
+    background-color: $blueColor;
+    font-size: $fontSizeButtonMin;
+    font-weight: 700;
+    color: $whiteColor2;
+    border: none;
+    border-radius: 15px;
+    text-align: center;
+    transition: .2s ease;
+
+    &:hover {
+    filter: brightness(92%);
+    }
+    }
+
+    }
+
+    .delete_account{
+        text-align: center;
+        margin: auto;
+        height: 100%;
+        width: 100%;
+
+        #delete-user{
+    background-color: #d00000;
+    }
+
+    }
+
+}
+
+@media(max-width: 1068px) {
+    .register_login{
+        h2{
+            color: $whiteColor3;
+        }
+    }
+    .login_form{
+        margin: auto;
+    @include flex-column();
+
+    .auth_login{
+        width: 470px;
+        .login_div {
+            height:100%;
+        }
+    }
+
+    h2 {
+        font-size: $fontSizeH4;
+        color: $whiteColor3;
+        font-weight: 700;
+    }
+
+
+    }
+
+    }
+
+    @media(max-width: 576px) {
+        .register_login{
+            h2{
+                color: $whiteColor3;
+            }
+        }
+        .login_form{
+            margin: auto;
+        @include flex-column();
+
+        .auth_login{
+            width: 100%;
+            .login_div {
+                height:100%;
+            }
+        }
+
+        h2 {
+            font-size: $fontSizeH4;
+            color: $whiteColor3;
+            font-weight: 700;
+        }
+
+
+        }
+
+        }
+
+
+
+// Dashbord User
+
+.user-dashbord{
+    padding:2px 15px;
+    margin: auto;
+    @include flex-column2();
+background: url("https://www.era.europa.eu/sites/default/files/2023-06/European%20Rail%20Safety%20Days%202023%20Visual%20Carousel%20-%20Light.jpg");
+background-position: center;
+background-size: cover;
+height:360px;
+width:100%;
+background-repeat: no-repeat !important;
+
+h2{
+    text-align: center;
+    font-size: $fontSizeH2;
+    color: $redColor;
+    font-weight: 700;
+}
+}
+
+.user_info {
+    text-align: center;
+    margin: auto;
+    border: 1px solid $blueColor;
+        @include flex-column();
+padding:5px 2px;
+        background-color: $blueWhiteColor2;
+        height: 100%;
+        width: 520px;
+        border-radius: 15px;
+
+        h3 {
+            font-size: $fontSizeH3;
+            color: $blueColor;
+            font-weight: 600;
+        }
+
+        .button-send {
+            margin-top: 5px;
+            @include flex-center();
+            button {
+            margin: 10px 15px;
+            cursor: pointer;
+            height: 40px;
+            width: 160px;
+            background-color: $blueColor;
+            font-size: $fontSizeButtonMin;
+            font-weight: 700;
+            color: $whiteColor2;
+            border: none;
+            border-radius: 15px;
+            text-align: center;
+            transition: .2s ease;
+
+            &:hover {
+            filter: brightness(92%);
+            }
+            }
+
+            }
+
+
+
+
+
+            i {
+                border-radius: 10px;
+                background-color: $yellowColor;
+                padding: 5px;
+                width: 90px;
+                height: 72px;
+text-align: center;
+                border: 3px solid $grayColor;
+                font-size: 50px;
+                gap: 5px;
+                font-weight: 600;
+                color: $grayColor;
+              }
+
+
+
+
+
+
+}
+
+@media(max-width: 1068px) {
+    .user-dashbord,.user_info {
+        width: 100%;
+        height: 100%;
+        margin: auto;
+
+    h2 {
+        text-align: center;
+        font-size: $fontSizeH3;
+        color: $blueColor;
+        font-weight: 700;
+
+    }
+    }
+}
+
+
+@media(max-width: 576px) {
+    .user-dashbord,.user_info {
+        padding: 10px;
+        width: 100%;
+        height: 100%;
+        margin: auto;
+
+    h2 {
+        text-align: center;
+        font-size: $fontSizeH3;
+        color: $blueColor;
+        font-weight: 700;
+
+    }
+    }
+}
+
+    }
+    }
+}
+
+
+
+// Contacte
+.contact {
+    padding:2px 15px;
+    margin: auto;
+    @include flex-column2();
+background: url("https://ic.pics.livejournal.com/matsam/17556459/9250080/9250080_original.png");
+background-position: center;
+background-size: cover;
+height:360px;
+width:100%;
+background-repeat: no-repeat !important;
+
+
+h2 {
+    font-size: $fontSizeH2;
+    color: $blueColor;
+    font-weight: 700;
+}
+
+}
+
+.txt-contact{
+    width: 100%;
+
+    padding: 10px;
+    margin: 8px 0px;
+    background-color: $blueColor;
+    @include flex-center();
+    h4{
+        text-align: center;
+        font-size: $fontSizeH4;
+        color: $whiteColor3;
+        font-weight: 600;
+    }
+}
+
+
+
+.contact_form {
+    margin: auto;
+    @include flex-center();
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+    border: 1px solid $blueColor;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+    form {
+        @include flex-column();
+
+
+        input{
+            margin: 5px 0;
+            width: 100%;
+            padding: 5px;
+            border: 1px solid $blueColor;
+            border-radius: 5px;
+            font-size: $fontSizeInput;
+            transition: border-color 0.3s ease;
+
+            &:focus {
+                outline: none;
+                border-color: $grayColor;
+            }
+        }
+
+        textarea {
+            margin: 5px 0;
+            width: 250px;
+            padding: 10px;
+            border: 1px solid $blueColor;
+            border-radius: 5px;
+            font-size: $fontSizeInput;
+            transition: border-color 0.3s ease;
+            resize: vertical;
+            height: auto;
+
+            &:focus {
+                outline: none;
+                border-color: $grayColor;
+            }
+        }
+
+    }
+
+    .button-send {
+        @include flex-center();
+        padding: 12px;
+a{
+    text-decoration: none;
+    color: $whiteColor;
+}
+        button {
+            cursor: pointer;
+            height: 40px;
+            width: 250px;
+            background-color: $blueColor;
+            font-size: $fontSizeButtonMin;
+            font-weight: 700;
+            color: $whiteColor2;
+            border: none;
+            border-radius: 15px;
+            text-align: center;
+            transition: background-color 0.2s ease;
+
+            &:hover {
+                filter: brightness(92%);
+            }
+        }
+    }
+}
+
+
+
+@media(max-width: 1068px) {
+    .contact_form{
+      width: 100%;
+      height: 100%;
+      @include flex-column();
+
+
+    }
+
+    .txt-contact{
+        width: 100%;
+        height: 100%;
+        @include flex-column();
+}
+.contact{
+    width: 100%;
+    h2 {
+        color: $whiteColor3;
+        font-weight: 700;
+    }
+}
+
+}
+
+
+
+@media(max-width: 576px) {
+    .contact_form{
+      width: 100%;
+      height: 100%;
+      @include flex-column();
+
+
+    }
+
+    .txt-contact{
+        width: 100%;
+        height: 100%;
+        @include flex-column();
+}
+.contact{
+    width: 100%;
+    h2 {
+        color: $whiteColor3;
+        font-weight: 700;
+    }
+}
+
+}
+
+
+
+
+// Despre Noi
+
+.despre{
+    @include flex-column();
+    width: 100%;
+    height: 100%;
+
+    img{
+        border-radius:50% ;
+        height: 150px;
+        margin: auto;
+    }
+
+    .modal_div {
+margin: 15px 0px;
+        @include flex-column();
+        height: 100%;
+        width: 550px;
+        padding: 15px 25px;
+        background-color: $blueWhiteColor;
+        border-radius: 15px;
+        text-align: center;
+        p {
+            text-align: center;
+            font-size: $fontSizep;
+            color: $grayColor;
+            font-weight: 700;
+        }
+
+        h4 {
+            text-align: center;
+            font-size: $fontSizeH4;
+            color: $blueColor;
+        }
+
+        h3{
+            text-align: center;
+            font-size: $fontSizeH3;
+            color: $redColor
+        }
+}
+}
+
+@media(max-width: 1068px) {
+    .despre{
+      width: 100%;
+      height: 100%;
+      @include flex-column();
+.modal_div{
+    width: 100%;
+    height: 100%;
+}
+
+    }
+}
+
+
+@media(max-width: 576px) {
+    .despre{
+      width: 100%;
+      height: 100%;
+      @include flex-column();
+.modal_div{
+    width: 100%;
+    height: 100%;
+}
+
+    }
+}
+
+
+.despre-center{
+    margin: 15px 0px;
+    gap: 10px 35px;
+    @include flex-center();
+    width: 100%;
+    height: 430px;
+
+    img{
+        border: 2px solid $yellowColor;
+        border-radius:50px ;
+        height: 150px;
+        margin: auto;
+    }
+
+    .modal_div {
+margin: 15px 0px;
+        @include flex-column();
+        height: 100%;
+        width: 550px;
+        padding: 15px 25px;
+        background-color: $blueWhiteColor2;
+        border-radius: 15px;
+        text-align: center;
+        p {
+            margin: 5px 0px;
+            text-align: center;
+            font-size: $fontSizep;
+            color: $grayColor;
+            font-weight: 700;
+        }
+
+
+
+        h3{
+            text-align: center;
+            font-size: $fontSizeH3;
+            color: $blueColor;
+            font-weight: 600;
+        }
+}
+}
+
+
+@media(max-width: 1068px) {
+    .despre-center{
+      width: 100%;
+      height: 100%;
+      @include flex-column();
+  .modal_div {
+    width: 100%;
+    height: 100%;
+
+  }
+
+
+    }
+}
+
+@media(max-width: 576px) {
+    .despre-center{
+      width: 100%;
+      height: 100%;
+      @include flex-column();
+  .modal_div {
+    width: 100%;
+    height: 100%;
+img{
+    width: 100%;
+    height: 100%;
+}
+  }
+
+
+    }
+}
+
+
+
+.slider-despre {
+    padding: 24px;
+    background-repeat: no-repeat !important;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 500px;
+    @include flex-column();
+
+&::before{
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 450px;
+  background: url("https://lexinform.com.ua/wp-content/uploads/2019/01/beautiful-blue-passenger-tr-min.jpg") no-repeat center/cover;
+  filter: blur(2px);
+  z-index: -1;
+
+}
+h4 {
+    text-align: center;
+    font-size: $fontSizeH4;
+    color: $whiteColor2;
+    text-shadow: 1px 2px 2px $grayColor;
+    font-weight: 700;
+}
+
+
+
+h2{
+    text-align: center;
+    font-size: $fontSizeH2;
+    color: $blueColor;
+    font-weight: 700;
+}
+
+.decoration{
+    text-align: center;
+    font-size: $fontSizeH4;
+    color: $redColor;
+    font-weight: 700;
+}
+
+.swiper {
+    height: 320px;
+width: 860px;
+border-radius: 15px;
+}
+
+  .swiper-slide{
+width: auto;
+height: auto;
+img {
+object-fit: cover;
+height: 100%;
+width: 100%;
+
+}
+
+
+
+}
+
+
+      }
+
+
+      @media(max-width: 1068px) {
+        .slider-despre{
+           h4{
+display: none;
+
+            }
+      .swiper {
+        @include flex-column();
+        width: 100%;
+height: 100%;
+      }
+
+
+        }
+    }
+
+
+    @media(max-width: 576px) {
+        .slider-despre{
+           h4{
+display: none
+            }
+      .swiper {
+        @include flex-column();
+        width: 100%;
+height: 100%;
+      }
+
+
+        }
+    }
+
+
+
+
+
+    //   Mersul Trenului MAPS/ROUTE
+
+    .mersul-trenuri{
+        padding:2px 15px;
+        margin: auto;
+        @include flex-column2();
+    background: url("https://www.thalesgroup.com/sites/default/files/database/assets/images/2018-09/robots%20on%20rail.jpg");
+    background-position: center;
+    background-size: cover;
+    height:360px;
+    width:100%;
+    background-repeat: no-repeat !important;
+
+    h2 {
+        text-align: center;
+        font-size: $fontSizeH2;
+        color: $blueColor;
+        text-shadow: 1px 2px 2px $grayColor;
+        font-weight: 800;
+    }
+}
+
+
+
+@media(max-width: 1068px) {
+    .mersul-trenuri{
+        @include flex-column();
+    }
+}
+
+@media(max-width: 576px) {
+    .mersul-trenuri{
+        @include flex-column();
+    }
+}
+.list-routesNational{
+    padding: 15px 25px;
+    gap: 10px 35px;
+    @include flex-between();
+    width: 100%;
+    height: 100%;
+
+    img{
+        border: 2px solid $yellowColor;
+        border-radius:50px ;
+        height: 150px;
+        margin: auto;
+    }
+
+
+
+
+    .modal_div {
+        @include flex-column();
+        height:250px;
+        width: 550px;
+        background-color: $blueWhiteColor2;
+        border-radius: 15px;
+        text-align: center;
+        p {
+            margin: 5px 0px;
+            text-align: center;
+            font-size: $fontSizep;
+            color: $grayColor;
+            font-weight: 700;
+        }
+
+
+
+        h3{
+            text-align: center;
+            font-size: $fontSizeH3;
+            color: $blueColor;
+            font-weight: 600;
+        }
+}
+
+button {
+    cursor: pointer;
+    height: 40px;
+    width: 250px;
+    background-color: $blueColor;
+    font-size: $fontSizeButtonMin;
+    font-weight: 700;
+    color: $whiteColor2;
+    border: none;
+    border-radius: 15px;
+    text-align: center;
+    transition: background-color 0.2s ease;
+
+    &:hover {
+        filter: brightness(92%);
+    }
+}
+
+#modal{
+    background-color: $yellowColor;
+}
+}
+
+@media(max-width: 1068px) {
+    .list-routesNational{
+        @include flex-column();
+        width: 100%;
+        height: 100%;
+
+    .modal_div{
+        width: 100%;
+        height: 100%;
+    }
+    }
+
+}
+@media(max-width: 576px) {
+    .list-routesNational{
+        @include flex-column();
+        width: 100%;
+        height: 100%;
+
+    .modal_div{
+        width: 100%;
+        height: 100%;
+    }
+    }
+
+}
+
+
+
+.text-national{
+    margin: 10px 0px;
+@include flex-between();
+    width: auto;
+height: auto;
+
+h2{
+    margin: 0px 25px;
+    padding-left: 35px;
+    text-align:start;
+    font-size: $fontSizeH2;
+    color: $blueColor;
+    font-weight: 600;
+}
+
+
+
+}
+
+
+@media(max-width: 1068px) {
+    .text-national{
+     display: none;
+    }
+}
+
+
+
+
+
+// Maps
+
+
+.trv{
+    width: 100%;
+    height: 100%;
+        .map-alls{
+            background-color: $blueWhiteColor2;
+                padding: 5px 15px ;
+                text-align: center;
+                margin: auto;
+                width: 100%;
+                height: 100%;
+                @include flex-between();
+
+                button {
+                    cursor: pointer;
+                    height: 50px;
+                    width: 250px;
+                    background-color: $blueColor;
+                    font-size: $fontSizeButtonMin;
+                    font-weight: 700;
+                    padding: 5px;
+                    color: $whiteColor;
+                    border: none;
+                    border-radius: 18px;
+                    text-align: center;
+                    transition: .2s ease;
+
+                &:hover {
+                    filter: brightness(92%);
+                }
+            }
+
+    }
+.txth2{
+    h2{
+        font-size: $fontSizeH2;
+        color: $blueColor;
+        text-align: center;
+        font-weight: 800;
+    }
+
+    h4{
+        font-size: $fontSizeH4;
+        color: $grayColor;
+        text-align: center;
+        font-weight: 600;
+    }
+
+    p{
+        font-size: $fontSizep;
+        color: $blueColor;
+        text-align: center;
+        font-weight: 600;
+    }
+}
+            .logo{
+                border-radius: 20%;
+                height: 120px;
+                border: 1px solid $blueColor;
+            }
+
+
+            .all-log {
+                width: 100%;
+                @include flex-column();
+
+                h3{
+                    text-align: center;
+                    font-size: $fontSizeH3;
+                    color: $grayColor;
+                }
+
+            }
+
+            .station-list{
+                @include flex-column();
+                    padding: 8px 0;
+                    border-bottom: 1px solid $grayLightColor ;
+
+                    .station {
+                        font-weight: bold;
+                color: $blueColor;
+
+                    }
+
+                .time{
+                    font-size: $fontSizeH4;
+
+                }
+                .return-time{
+                font-size: $fontSizeH4;
+                color: $redColor;
+                }
+
+
+                li {
+                    margin: auto;
+                    color: $blueColor;
+                    font-size: $fontSizeH4;
+                    font-weight: 600;
+                    padding: 8px 0;
+                    border-bottom: 1px solid $blueWhiteColor
+                }
+
+                }
+
+        }
+
+
+
+        @media(max-width: 1068px) {
+.trv{
+    height: 100%;
+    width: 100%;
+
+
+    .map-alls{
+        @include flex-column();
+
+        .txth2{
+            h2{
+                font-size: $fontSizeH3;
+            }
+
+    }
+
+
+}
+.station-list{
+    width: 100%;
+    height: 100%;
+
+}
+
+}
+
+    }
+
+
+
+    @media(max-width: 576px) {
+        .trv{
+            height: 100%;
+            width: 100%;
+
+
+            .map-alls{
+                @include flex-column();
+
+                .txth2{
+                    h2{
+                        font-size: $fontSizeH4;
+                    }
+
+            }
+
+
+        }
+        .station-list{
+            width: 100%;
+            height: 100%;
+
+        }
+
+        }
+
+            }
+
+
+        #map {
+            height: 400px;
+            width: 100%;
+        }
+
+        #map2 {
+            height: 400px;
+            width: 100%;
+        }
+
+        #map3 {
+            height: 400px;
+            width: 100%;
+        }
+
+        #map4 {
+            height: 400px;
+            width: 100%;
+        }

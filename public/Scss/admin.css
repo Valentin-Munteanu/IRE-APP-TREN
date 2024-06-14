@@ -1,0 +1,1123 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:wght@300;400;500;600;700;800&family=Pacifico&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:wght@100;300;400;500;700;900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.errors {
+  margin: 3px;
+  text-align: center;
+  font-size: 17px;
+  color: #d00000;
+  font-weight: 700;
+}
+
+.pages-home {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+@media (max-width: 1068px) {
+  .pages-home {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 50%;
+    height: 80%;
+  }
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+header img {
+  height: 150px;
+}
+
+@media (max-width: 1068px) {
+  .header {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+}
+@media (max-width: 576px) {
+  .pages-home {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 50%;
+    height: 80%;
+  }
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+header img {
+  height: 150px;
+}
+
+@media (max-width: 576px) {
+  .header {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+}
+.create {
+  margin: auto;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+  background: url("https://images.unsplash.com/photo-1514828260103-1e9bf9a58446?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  background-position: center;
+  background-size: cover;
+  height: 300px;
+  width: 100%;
+  background-repeat: no-repeat !important;
+}
+.create h1 {
+  text-align: center;
+  font-size: 40px;
+  color: #e7e6e6;
+  font-weight: 800;
+}
+
+@media (max-width: 768px) {
+  .create {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .create h1 {
+    text-align: center;
+    font-size: 30px;
+    color: #e7e6e6;
+    font-weight: 800;
+  }
+}
+.edit-routes {
+  margin: auto;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+  background: url("https://ulasim.ibb.istanbul/wp-content/uploads/2019/05/ulasim-genel-2.jpg");
+  background-position: center;
+  background-size: cover;
+  height: 350px;
+  width: 100%;
+  background-repeat: no-repeat !important;
+}
+.edit-routes h1 {
+  text-align: center;
+  font-size: 40px;
+  color: #0844A8;
+  font-weight: 700;
+}
+
+@media (max-width: 1068px) {
+  .edit-routes {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .edit-routes h1 {
+    text-align: center;
+    font-size: 30px;
+    color: #e7e6e6;
+    font-weight: 800;
+  }
+}
+@media (max-width: 576px) {
+  .edit-routes {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .edit-routes h1 {
+    text-align: center;
+    font-size: 30px;
+    color: #e7e6e6;
+    font-weight: 800;
+  }
+}
+.Crud {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.Crud .formular {
+  background-color: #e7e6e6;
+  height: 100%;
+  position: relative;
+  width: 500px;
+  border-radius: 15px;
+}
+.Crud .formular .images {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.Crud .formular img {
+  border-radius: 50px;
+  height: 100px;
+}
+.Crud .formular h3 {
+  text-align: center;
+  font-size: 25px;
+  color: #0844A8;
+}
+.Crud .formular h4 {
+  text-align: center;
+  font-size: 20px;
+  color: #0844A8;
+}
+.Crud .formular input {
+  margin: 5px;
+  border: none;
+  font-weight: 600;
+  padding: 3px;
+  font-size: 15px;
+  border: 1px solid #161616;
+  border-radius: 10px;
+  height: auto;
+  width: calc(50% - 5px);
+  transition: 0.3s ease;
+}
+.Crud .formular input:focus {
+  outline: none;
+  border: 1px solid #0844A8;
+}
+.Crud .formular input[type=checkbox] {
+  text-align: center;
+  height: 20px;
+  font-weight: 700;
+}
+.Crud .formular label {
+  font-size: 17px;
+  color: #161616;
+  font-weight: 500;
+}
+.Crud .formular .form-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 15px 15px;
+  width: auto;
+  height: auto;
+}
+.Crud .button-send {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Crud .button-send button {
+  margin: 10px 15px;
+  cursor: pointer;
+  height: 40px;
+  width: calc(50% - 5px);
+  background-color: #0844A8;
+  font-size: 20px;
+  font-weight: 700;
+  padding: 5px;
+  color: white;
+  border: none;
+  border-radius: 18px;
+  text-align: center;
+  transition: 0.2s ease;
+}
+.Crud .button-send button:hover {
+  filter: brightness(92%);
+}
+
+@media (max-width: 1068px) {
+  .Crud {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .Crud h1 {
+    text-align: center;
+    font-size: 30px;
+    color: #e7e6e6;
+    font-weight: 800;
+  }
+  .Crud .formular {
+    width: 370px;
+  }
+  .Crud .formular img {
+    border-radius: 50px;
+    height: 70px;
+  }
+}
+@media (max-width: 576px) {
+  .Crud {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .Crud h1 {
+    text-align: center;
+    font-size: 30px;
+    color: #e7e6e6;
+    font-weight: 800;
+  }
+  .Crud .formular {
+    width: 370px;
+  }
+  .Crud .formular img {
+    border-radius: 50px;
+    height: 70px;
+  }
+}
+.delete-route {
+  margin: auto;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+  background: url("https://images.unsplash.com/photo-1612083111232-29f08821e47a?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  background-position: center;
+  background-size: cover;
+  height: 370px;
+  width: 100%;
+  background-repeat: no-repeat !important;
+}
+.delete-route h1 {
+  text-align: center;
+  font-size: 40px;
+  color: #ad0f17;
+  font-weight: 700;
+}
+
+@media (max-width: 1068px) {
+  .delete-route {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .delete-route h1 {
+    text-align: center;
+    font-size: 30px;
+    color: #e7e6e6;
+    font-weight: 800;
+  }
+}
+@media (max-width: 576px) {
+  .delete-route {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .delete-route h1 {
+    text-align: center;
+    font-size: 30px;
+    color: #e7e6e6;
+    font-weight: 800;
+  }
+}
+.formular-delete {
+  text-align: center;
+  margin: auto;
+  background-color: #e3e4e6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.formular-delete h2 {
+  font-size: 30px;
+  color: #d00000;
+  font-weight: 700;
+}
+.formular-delete h3 {
+  text-align: center;
+  font-size: 25px;
+  color: #0844A8;
+}
+.formular-delete p {
+  font-size: 17px;
+  font-weight: 700;
+  color: #161616;
+}
+.formular-delete button {
+  margin: 10px 15px;
+  cursor: pointer;
+  height: 40px;
+  width: 200px;
+  background-color: #0844A8;
+  font-size: 20px;
+  font-weight: 700;
+  padding: 5px;
+  color: white;
+  border: none;
+  border-radius: 18px;
+  text-align: center;
+  transition: 0.2s ease;
+}
+.formular-delete button:hover {
+  filter: brightness(92%);
+}
+
+@media (max-width: 1068px) {
+  .formular-delete {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .formular-delete h2 {
+    text-align: center;
+    font-size: 25px;
+    color: #d00000;
+    font-weight: 700;
+  }
+  .formular-delete h3 {
+    text-align: center;
+    font-size: 20px;
+    color: #0844A8;
+  }
+}
+@media (max-width: 576px) {
+  .formular-delete {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .formular-delete h2 {
+    text-align: center;
+    font-size: 20px;
+    color: #d00000;
+    font-weight: 700;
+  }
+  .formular-delete h3 {
+    text-align: center;
+    font-size: 17px;
+    color: #0844A8;
+  }
+}
+.header-Admin {
+  padding: 5px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 10px 16px;
+}
+.header-Admin img {
+  height: 70px;
+  border-radius: 40% 20% 30% 50%;
+}
+.header-Admin nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header-Admin nav a {
+  padding: 5px;
+  border: 2px solid #0844A8;
+  border-radius: 30% 20%;
+  height: 75px;
+  width: 130px;
+  gap: 20px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #161616;
+  font-weight: 700;
+  text-align: center;
+  transition: 0.2s ease;
+}
+.header-Admin nav a:hover {
+  color: #0844A8;
+  border: 2px solid #161616;
+}
+
+@media (max-width: 1068px) {
+  .header-Admin {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .header-Admin nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+}
+@media (max-width: 576px) {
+  .header-Admin {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .header-Admin nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+}
+.header-Admin2 {
+  background-color: #c6d8ff;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px 16px;
+}
+.header-Admin2 img {
+  border-radius: 50%;
+  height: 100px;
+}
+.header-Admin2 i {
+  transition: 0.3s ease;
+  color: #161616;
+  font-weight: 600;
+  font-size: 30px;
+}
+.header-Admin2 i:hover {
+  color: #0844A8;
+}
+.header-Admin2 nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header-Admin2 nav #admin {
+  border-radius: 10px;
+  background-color: #0844A8;
+  padding: 5px;
+  width: 90px;
+  text-align: center;
+  border: 3px solid #fcc53b;
+  font-size: 50px;
+  gap: 5px;
+  font-weight: 600;
+  color: #161616;
+}
+.header-Admin2 nav a {
+  font-size: 20px;
+  color: #161616;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+.header-Admin2 nav a:hover {
+  color: #0844A8;
+}
+
+@media (max-width: 1068px) {
+  .header-Admin2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .header-Admin2 nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+@media (max-width: 576px) {
+  .header-Admin2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .header-Admin2 nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+.admin-home {
+  padding: 10px 15px;
+  margin: auto;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+  background: url("https://morproekt.ru/images/content/data/store/images/railway_02.jpg");
+  background-position: center;
+  background-size: cover;
+  height: 430px;
+  width: 100%;
+  background-repeat: no-repeat !important;
+}
+.admin-home h2 {
+  text-align: center;
+  font-size: 30px;
+  color: #e7e6e6;
+  font-weight: 700;
+}
+.admin-home img {
+  padding: 10px 15xp;
+  height: 150px;
+  border-radius: 50%;
+}
+
+.admin_oferte {
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  background: url("../Images/DPK3.jpg");
+  background-position: center;
+  background-size: cover;
+  height: 300px;
+  width: 600px;
+  background-repeat: no-repeat !important;
+}
+.admin_oferte h2 {
+  font-size: 30px;
+  color: #0844A8;
+  font-weight: 700;
+}
+
+.admin_information {
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  background: url("../Images/tren6.jpg");
+  background-position: center;
+  background-size: cover;
+  height: 300px;
+  width: 600px;
+  background-repeat: no-repeat !important;
+}
+.admin_information h2 {
+  font-size: 30px;
+  color: #e7e6e6;
+  font-weight: 700;
+}
+
+@media (max-width: 1068px) {
+  .admin_information, .admin_oferte {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+    width: 350px;
+    height: 220px;
+  }
+  .admin_information h2, .admin_oferte h2 {
+    font-size: 20px;
+    color: #161616;
+    font-weight: 700;
+  }
+}
+@media (max-width: 576px) {
+  .admin_oferte, .admin_information {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+    width: 350px;
+    height: 220px;
+  }
+  .admin_oferte h2, .admin_information h2 {
+    font-size: 20px;
+    color: #0844A8;
+    font-weight: 700;
+  }
+}
+.register_admin {
+  padding: 2px 15px;
+  margin: auto;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+  background: url("https://u.9111s.ru/uploads/202301/15/f2bcafa08a7dd8cc582e73ca79c41467.jpg");
+  background-position: center;
+  background-size: cover;
+  height: 460px;
+  border-radius: 10px;
+  width: 100%;
+  background-repeat: no-repeat !important;
+}
+.register_admin h2 {
+  text-align: center;
+  font-size: 30px;
+  color: #0844A8;
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .admin_information {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+    width: 350px;
+    height: 220px;
+  }
+  .admin_information h2 {
+    font-size: 20px;
+    color: #161616;
+    font-weight: 700;
+  }
+}
+.register_form {
+  width: 100%;
+  height: 100%;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.register_form .auth_admin {
+  border: 1px solid #c6d8ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 15px;
+  background-color: #e7e6e6;
+  height: 100%;
+  width: 650px;
+  border-radius: 15px;
+}
+.register_form .auth_admin .errors {
+  margin: 3px;
+  text-align: center;
+  font-size: 17px;
+  color: #d00000;
+  font-weight: 700;
+}
+.register_form .auth_admin form {
+  text-align: center;
+}
+.register_form .auth_admin input {
+  width: 215px;
+  margin: 5px;
+  border: none;
+  font-weight: 600;
+  padding: 5px;
+  font-size: 15px;
+  border: 1px solid #0844A8;
+  border-radius: 10px;
+  height: auto;
+  transition: 0.3s ease;
+}
+.register_form .auth_admin input:focus {
+  outline: none;
+  border: 1px solid #161616;
+}
+.register_form .auth_admin .login_div {
+  height: 130px;
+  width: 900px;
+  margin: 5px 10px;
+  padding: 15px 25px;
+  background-color: #c6d8ff;
+  border-radius: 15px;
+  text-align: center;
+}
+.register_form .auth_admin h3 {
+  font-size: 25px;
+  color: #0844A8;
+  font-weight: 600;
+}
+.register_form .auth_admin p {
+  font-size: 17px;
+  color: #161616;
+  font-weight: 500;
+}
+.register_form .auth_admin a {
+  margin: 5px;
+  font-size: 20px;
+  color: #161616;
+  font-weight: 500;
+  transition: 0.2s ease;
+}
+.register_form .auth_admin a:hover {
+  color: #0844A8;
+}
+.register_form .button-send {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.register_form .button-send button {
+  margin: 10px 15px;
+  cursor: pointer;
+  height: 40px;
+  width: 215px;
+  background-color: #0844A8;
+  font-size: 20px;
+  font-weight: 700;
+  padding: 5px;
+  color: white;
+  border: none;
+  border-radius: 15px;
+  text-align: center;
+  transition: 0.2s ease;
+}
+.register_form .button-send button:hover {
+  filter: brightness(92%);
+}
+.register_form .password-container2 {
+  position: relative;
+  display: inline-block;
+}
+.register_form .password-container2 .toggle-password {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  pointer-events: auto;
+}
+.register_form .password-container2 .toggle-password i {
+  color: #0844A8;
+}
+
+@media (max-width: 1068px) {
+  .register_form {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .register_form .auth_admin {
+    width: 470px;
+  }
+  .register_form .auth_admin .login_div {
+    height: 100%;
+  }
+  .register_form h2 {
+    font-size: 20px;
+    color: #161616;
+    font-weight: 700;
+  }
+}
+@media (max-width: 576px) {
+  .register_form {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .register_form .auth_admin {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .register_form .auth_admin .login_div {
+    width: 100%;
+    height: 100%;
+  }
+  .register_form h2 {
+    font-size: 20px;
+    color: #161616;
+    font-weight: 700;
+  }
+}
+.register_login {
+  padding: 2px 15px;
+  margin: auto;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+  background: url("https://hdpic.club/uploads/posts/2021-12/1640273389_44-hdpic-club-p-poezda-dvizhenie-77.jpg");
+  background-position: center;
+  background-size: cover;
+  height: 330px;
+  width: 100%;
+  background-repeat: no-repeat !important;
+}
+.register_login h2 {
+  text-align: center;
+  font-size: 30px;
+  color: #0844A8;
+  font-weight: 700;
+}
+
+.login_form {
+  width: 100%;
+  height: 100%;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.login_form .auth_login {
+  border: 1px solid #c6d8ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 10px 15px;
+  background-color: #e7e6e6;
+  height: 100%;
+  position: relative;
+  width: 620px;
+  border-radius: 15px;
+}
+.login_form .auth_login form {
+  text-align: center;
+}
+.login_form .auth_login input {
+  margin: 5px;
+  border: none;
+  width: 215px;
+  font-weight: 600;
+  padding: 5px;
+  font-size: 15px;
+  border: 1px solid #0844A8;
+  border-radius: 10px;
+  height: auto;
+  transition: 0.3s ease;
+}
+.login_form .auth_login input:focus {
+  outline: none;
+  border: 1px solid #161616;
+}
+.login_form .auth_login .password-container {
+  position: relative;
+  display: inline-block;
+}
+.login_form .auth_login .password-container .toggle-password {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  pointer-events: auto;
+}
+.login_form .auth_login .password-container .toggle-password i {
+  color: #0844A8;
+}
+.login_form .button-send {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.login_form .button-send button {
+  margin: 10px 15px;
+  cursor: pointer;
+  height: 40px;
+  width: 215px;
+  background-color: #0844A8;
+  font-size: 20px;
+  font-weight: 700;
+  padding: 5px;
+  color: white;
+  border: none;
+  border-radius: 15px;
+  text-align: center;
+  transition: 0.2s ease;
+}
+.login_form .button-send button:hover {
+  filter: brightness(92%);
+}
+
+@media (max-width: 1068px) {
+  .login_form {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .login_form .auth_login {
+    width: 470px;
+  }
+  .login_form .auth_login .login_div {
+    height: 100%;
+  }
+  .login_form h2 {
+    font-size: 20px;
+    color: #161616;
+    font-weight: 700;
+  }
+}
+@media (max-width: 576px) {
+  .login_form {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .login_form .auth_login {
+    width: 470px;
+  }
+  .login_form .auth_login .login_div {
+    height: 100%;
+  }
+  .login_form h2 {
+    font-size: 20px;
+    color: #161616;
+    font-weight: 700;
+  }
+}
+.admin_dashboard {
+  padding: 2px 15px;
+  margin: auto;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+  background: url("https://rail.knorr-bremse.com/media/test_e/6400_publications/6420_fachliteratur/reproducible_braking_distance_monte_carlo/h-monte-carlo-analysis_16x9_1920w.jpg");
+  background-position: center;
+  background-size: cover;
+  height: 400px;
+  width: 100%;
+  background-repeat: no-repeat !important;
+}
+.admin_dashboard h2 {
+  text-align: center;
+  font-size: 30px;
+  color: #0844A8;
+  font-weight: 700;
+}
+
+.admin_info {
+  margin: auto;
+  border: 1px solid #0844A8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 10px 15px;
+  gap: 2px;
+  background-color: #c6d8ff;
+  height: 100%;
+  width: 320px;
+  border-radius: 15px;
+}
+.admin_info h3 {
+  font-size: 25px;
+  color: #0844A8;
+  font-weight: 600;
+}
+.admin_info p {
+  color: #d00000;
+  font-size: 17px;
+  font-weight: 600;
+}
+.admin_info .button-send {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.admin_info .button-send button {
+  margin: 10px 15px;
+  cursor: pointer;
+  height: 40px;
+  width: 160px;
+  background-color: #0844A8;
+  font-size: 20px;
+  font-weight: 700;
+  padding: 5px;
+  color: white;
+  border: none;
+  border-radius: 15px;
+  text-align: center;
+  transition: 0.2s ease;
+}
+.admin_info .button-send button:hover {
+  filter: brightness(92%);
+}
+.admin_info i {
+  font-size: 25px;
+  gap: 5px;
+  font-weight: 600;
+  color: #161616;
+}
+
+@media (max-width: 1068px) {
+  .admin_dashboard {
+    margin: auto;
+  }
+  .admin_dashboard h2 {
+    text-align: center;
+    font-size: 25px;
+    color: #0844A8;
+    font-weight: 700;
+  }
+}
+@media (max-width: 576px) {
+  .admin_dashboard {
+    margin: auto;
+  }
+  .admin_dashboard h2 {
+    text-align: center;
+    font-size: 25px;
+    color: #0844A8;
+    font-weight: 700;
+  }
+}/*# sourceMappingURL=admin.css.map */

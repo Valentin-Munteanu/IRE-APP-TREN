@@ -1,0 +1,1709 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:wght@300;400;500;600;700;800&family=Pacifico&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:wght@100;300;400;500;700;900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+// APP.SCSS -> STILIZARI PENTRU APLICATIA DE BILETE
+
+// Variabile pentru fontSize si color
+$blueColor:#0844A8;
+$whiteColor3:#ffff;
+$blueWhiteColor:#e3e4e6;
+$blueWhiteColor2:#c6d8ff;
+$grayLightColor: #7e7d7d;
+$whiteColor2: #ffff;
+$whiteColor: #e7e6e6;
+$yellowColor:#fcc53b;
+$grayColor: #161616;
+$redColor: #d00000;
+
+$redColor2: #ad0f17;
+$greenColor:#04e722;
+
+// font-size
+$fontSizeH3: 25px;
+$fontSizeH4: 20px;
+$fontSizep: 17px;
+$fontSizeH2: 30px;
+$fontSizeH1: 40px;
+$fontSizeInput: 15px;
+$fontSizeButton: 26px;
+$fontSizeButtonMin: 20px;
+
+// Functii Flex
+@mixin flex-column {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+  }
+
+  @mixin flex-column2 {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+
+  }
+
+
+  @mixin flex-reverse {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row-reverse;
+
+  }
+
+  @mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+
+  @mixin flex-start {
+    display: flex;
+    justify-content: start;
+    align-items: start;
+  }
+  @mixin flex-startJ {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+  }
+
+  @mixin flex-startC {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+  }
+
+  @mixin flex-end {
+    display: flex;
+    justify-content: end;
+    align-items: end;
+  }
+
+  @mixin flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+
+  @mixin flex-reverse2 {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+
+
+
+  @mixin flex-around{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  @mixin flex-bilet {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-between;
+  }
+
+  @media(max-width: 576px) {
+    body{
+        width: 100%;
+        height: 100%;
+    }
+    }
+    @media(max-width: 1068px) {
+        body{
+            width: 100%;
+            height: 100%;
+        }
+        }
+
+
+
+
+// Color Request Erorrs
+.errors {
+    margin: 3px;
+    text-align: center;
+    font-size: $fontSizep;
+    color: $redColor;
+    font-weight: 700;
+}
+
+
+.biletes-header {
+    width: 100%;
+    height: 100%;
+    background-color: $blueWhiteColor;
+        padding: 10px 15px;
+    @include flex-center();
+    gap: 10px 16px;
+    img {
+        filter: brightness(105%);
+        width: 110px;
+        height: 70px;
+        border-radius: 20%;
+    }
+.img_reverse {
+    transform: scaleX(-1);
+}
+    nav {
+        gap: 1px;
+        @include flex-between();
+
+           }
+
+.all-header{
+    @include flex-center();
+    border-radius: 20%;
+    border-top: 4px solid $yellowColor;
+             border-bottom: 3px solid $blueColor;
+             border-radius: 20%;
+             border-left: 4px solid $blueColor;
+             border-right: 4px solid $blueColor;
+   height: 69px;
+   width:170px;
+transition: .3s ease;
+   &:hover {
+    background-color: $grayColor;
+       }
+
+
+   a{
+    text-decoration: none;
+   gap: 20px;
+   text-decoration: none;
+   font-size: $fontSizeH4;
+   color: $redColor;
+   font-weight: 700;
+   text-align: center;
+
+}
+}
+
+
+
+.all-header2{
+             @include flex-center();
+            //  Border-top -> borderul de sus
+             border-top: 4px solid $yellowColor;
+               //  Borderul de jos
+             border-bottom: 3px solid $blueColor;
+             border-radius: 20%;
+             border-left: 4px solid $blueColor;
+             border-right: 4px solid $blueColor;
+             border-radius: 20%;
+            background-color: $blueWhiteColor2;
+            height: 68px;
+            width:170px;
+
+
+            a{
+             text-decoration: none;
+            gap: 20px;
+            text-decoration: none;
+            font-size: $fontSizeH4;
+            color: $blueColor;
+            font-weight: 700;
+            text-align: center;
+
+         }
+            }
+
+
+
+
+.all-header3{
+
+    @include flex-center();
+    border-top: 4px solid $yellowColor; /* Bordura de sus */
+    border-bottom: 3px solid $blueColor; /* Bordura de jos */
+    border-radius: 20%;
+    border-left: 4px solid $blueColor;  /* Bordura de stânga */
+    border-right: 4px solid $blueColor;
+   height: 68px;
+   width:170px;
+
+
+   a{
+    text-decoration: none;
+   gap: 20px;
+   text-decoration: none;
+   font-size: $fontSizeH4;
+   color: $blueColor;
+   font-weight: 700;
+   text-align: center;
+
+}
+}
+
+
+
+}
+
+
+@media(max-width: 1068px) {
+    .biletes-header{
+        width: 100%;
+        height: 100%;
+.all-header,.all-header2,.all-header3{
+width: 130px;
+}
+
+img {
+display: none;
+}
+
+    }
+}
+
+
+
+@media(max-width: 576px) {
+    .biletes-header{
+        width: 100%;
+        height: 100%;
+.all-header,.all-header2,.all-header3{
+width: 100%;
+padding: 7px;
+gap: 5px;
+}
+
+img {
+display: none;
+}
+
+    }
+}
+
+
+// Date buttons
+
+
+.route-container{
+    gap: 5px;
+    padding: 10px 5px;
+width: 100%;
+height: 100%;
+
+
+.train_info{
+    border-radius: 5px;
+background-color: $blueWhiteColor2;
+    padding: 10px 15px;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    @include flex-between();
+    span{
+        color:$blueColor;
+        font-size: 27px;
+    }
+h4{
+    text-align: center;
+    font-size: $fontSizeH4;
+    color: $blueColor;
+    font-weight: 600;
+}
+
+p{
+    font-size: $fontSizep;
+    font-weight: 600;
+    color: $blueColor;
+}
+
+h3{
+    color: $redColor;
+}
+}
+
+
+
+.station {
+    width: 100%;
+    height: 100%;
+    @include flex-reverse2();
+    @include flex-column();
+
+    h3{
+        text-align: center;
+        font-size: $fontSizeH3;
+        color: $blueColor;
+        font-weight: 600;
+    }
+}
+
+.duration {
+width: auto;
+height: auto;
+}
+
+p{
+    font-size: $fontSizep;
+    font-weight: 600;
+    color: $grayColor;
+
+}
+
+}
+
+
+@media(max-width: 1068px) {
+    .route-container{
+        @include flex-column();
+        width: 100%;
+        height: 100%;
+
+    .train_info{
+        @include flex-center();
+       width: 100%;
+       height: 100%;
+       padding: 15px;
+       gap: 5px 10px;
+       h3{
+        text-align: center;
+        font-size: $fontSizeH4;
+
+    }
+    }
+
+}
+
+}
+
+
+
+@media(max-width: 576px) {
+    .route-container{
+        @include flex-column();
+        width: 100%;
+        height: 100%;
+
+    .train_info{
+        @include flex-center();
+       width: 100%;
+       height: 100%;
+       padding: 15px;
+       gap: 5px 10px;
+       h3{
+        text-align: center;
+        font-size: $fontSizeH4;
+
+    }
+    }
+
+}
+
+}
+
+
+
+
+.info_bilet{
+        margin: auto;
+        border: 1px solid $grayLightColor;
+            @include flex-column();
+    padding: 10px 15px;
+    gap: 2px;
+            background-color: $blueColor;
+            height: 100%;
+            width: 71%;
+            border-radius: 10px;
+
+            h3 {
+                text-align: center;
+                font-size: $fontSizeH3;
+                color: $whiteColor2;
+                font-weight: 600;
+            }
+
+            .init-date{
+                width: 100%;
+                height: 100%;
+                @include flex-center();
+
+           button {
+    margin: 5px 10px;
+    height: 30px;
+    width: 120px;
+    background-color: $grayColor;
+    font-size: $fontSizeInput;
+    font-weight: 700;
+    color: $whiteColor;
+    border: none;
+    border-radius: 10px;
+    text-align: center;
+    transition: .2s ease;
+           }
+            }
+            .buttoninit{
+                width: 100%;
+                height: 100%;
+                padding: 10px;
+                @include flex-center();
+            margin: auto;
+
+       #select-date {
+            cursor: pointer;
+                margin: 2px 10px;
+                height: 30px;
+                width: 120px;
+                background-color: $whiteColor;
+                font-size: $fontSizeInput;
+                font-weight: 700;
+                color: $grayColor;
+                border: none;
+                border-radius: 10px;
+                text-align: center;
+                transition: .2s ease;
+                &:hover {
+                   background-color: $grayColor;
+                   color: $whiteColor3;
+                   }
+            }
+
+        }
+
+
+}
+
+
+
+@media(max-width: 1068px) {
+    .info_bilet{
+        @include flex-column();
+        width: 100%;
+        height: 100%;
+        .buttoninit{
+            margin: auto;
+gap: 10px;
+            @include flex-column();
+
+        }
+    .init-date{
+        @include flex-column();
+       width: 100%;
+       height: 100%;
+       h3{
+        text-align: center;
+        font-size: $fontSizeH4;
+    }
+
+    }
+}
+
+}
+
+@media(max-width: 576px) {
+    .info_bilet{
+        @include flex-column();
+        width: 100%;
+        height: 100%;
+        .buttoninit{
+            margin: auto;
+gap: 10px;
+            @include flex-column();
+
+        }
+    .init-date{
+        @include flex-column();
+       width: 100%;
+       height: 100%;
+       h3{
+        text-align: center;
+        font-size: $fontSizeH4;
+    }
+
+    }
+}
+
+}
+
+//
+//
+// Vagon info
+
+
+.vagon_info{
+    gap: 5px;
+    padding: 10px 5px;
+width: 100%;
+height: 100%;
+
+
+    h3{
+        text-align: center;
+        font-size: $fontSizeH3;
+        color: $blueColor;
+        font-weight: 600;
+    }
+
+.train_info{
+    border-radius: 5px;
+background-color: $blueWhiteColor;
+    padding: 10px 15px;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    @include flex-between();
+
+
+}
+
+.icons {
+    cursor: pointer;
+height: 100%;
+width: 100%;
+color: $blueColor;
+
+i{
+    font-size: $fontSizep;
+}
+}
+
+.select {
+    cursor: pointer;
+    height: 40px;
+    width: 150px;
+    background-color: $blueColor;
+    font-size: $fontSizeButtonMin;
+    font-weight: 700;
+    padding: 5px;
+    color: $whiteColor2;
+    border: none;
+    border-radius: 18px;
+    text-align: center;
+    transition: .2s ease;
+
+&:hover {
+    filter: brightness(92%);
+}
+}
+
+.select2 {
+    cursor: pointer;
+    height: 40px;
+    width: 170px;
+    background-color: $redColor;
+    font-size: $fontSizeButtonMin;
+    font-weight: 700;
+    padding: 5px;
+    color: $whiteColor2;
+    border: none;
+    border-radius: 18px;
+    text-align: center;
+    transition: .2s ease;
+
+&:hover {
+    filter: brightness(92%);
+}
+}
+
+
+p{
+    font-size: $fontSizep;
+    font-weight: 700;
+    color: $grayColor;
+
+}
+
+h4 {
+    text-align: center;
+    font-size: $fontSizeH4;
+    color: $blueColor;
+}
+
+
+}
+
+
+
+@media(max-width: 1068px) {
+    .vagon_info{
+        gap: 15px;
+        @include flex-column();
+
+.icons{
+    @include flex-center();
+    gap: 10px;
+}
+    .train_info{
+        padding: 10px;
+        @include flex-center();
+       width: 100%;
+       height: 80%;
+    }
+    .select{
+        padding: 5px;
+        margin: 10px 12px;
+        width: 130px;
+    }
+}
+h4{
+    margin: 10px;
+    text-align: center;
+    font-size: $fontSizeH4;
+
+}
+.station {
+margin: 0px 10px;
+    @include flex-column2();
+
+}
+
+
+}
+
+
+
+
+.modal-background {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+@include flex-center();
+    opacity: 0;
+    transition: opacity 0.3s ease;
+
+    &.show {
+        display: flex;
+        opacity: 1;
+    }
+
+    .pop-up {
+
+        i{
+            gap: 10px;
+            color: $blueColor;
+            font-size: $fontSizep;
+        }
+        p{
+        margin: 5px;
+            font-size: $fontSizep;
+            font-weight: 600;
+            color: $grayColor;
+        }
+        &.modal {
+            height: 160px;
+            width: 340px;
+            display: none;
+background-color: $blueWhiteColor;
+            border: 1px solid $blueColor;
+            border-radius: 15px;
+            padding: 20px;
+            z-index: 1000;
+            opacity: 0;
+            transform: scale(0.8);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+
+            &.show {
+                display: block;
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+    }
+}
+
+
+
+
+@media(max-width: 576px) {
+    .vagon_info{
+        gap: 15px;
+        @include flex-column();
+
+.icons{
+    @include flex-center();
+    gap: 10px;
+}
+    .train_info{
+        padding: 10px;
+        @include flex-center();
+       width: 100%;
+       height: 80%;
+    }
+    .select{
+        padding: 5px;
+        margin: 10px 12px;
+        width: 130px;
+    }
+}
+h4{
+    margin: 10px;
+    text-align: center;
+    font-size: $fontSizeH4;
+
+}
+.station {
+margin: 0px 10px;
+    @include flex-column2();
+
+}
+
+
+}
+
+
+
+
+.modal-background {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+@include flex-center();
+    opacity: 0;
+    transition: opacity 0.3s ease;
+
+    &.show {
+        display: flex;
+        opacity: 1;
+    }
+
+    .pop-up {
+
+        i{
+            gap: 10px;
+            color: $blueColor;
+            font-size: $fontSizep;
+        }
+        p{
+        margin: 5px;
+            font-size: $fontSizep;
+            font-weight: 600;
+            color: $grayColor;
+        }
+        &.modal {
+            height: 160px;
+            width: 340px;
+            display: none;
+background-color: $blueWhiteColor;
+            border: 1px solid $blueColor;
+            border-radius: 15px;
+            padding: 20px;
+            z-index: 1000;
+            opacity: 0;
+            transform: scale(0.8);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+
+            &.show {
+                display: block;
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+// Vagon
+.vagon {
+    margin: 10px 29px;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    display: none;
+    border-radius: 15px;
+    background-color: $blueWhiteColor;
+    position: relative;
+    height: 130px;
+    width: 950px;
+    border-top-right-radius: 9% 35%;
+    border-bottom-right-radius:9% 35%;
+border: 3px solid $grayLightColor;
+
+
+
+
+
+
+    .locuri {
+@include flex-bilet();
+        padding: 12px 28px;
+
+        button
+        {
+            border: 1px solid $blueColor;
+            height: 30px;
+            width: 45px;
+            border-radius: 5px;
+            background-color: $whiteColor2;
+            font-size: $fontSizeInput;
+            font-weight: bold;
+            color: $grayColor;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+            margin: 10px 7px ;
+
+
+        }
+        .bst button {
+            border: none;
+            cursor: no-drop;
+            text-decoration: line-through $redColor 1px;
+            background-color: $grayColor;
+            color: $whiteColor;
+            }
+
+            .seat-selected {
+                color: $whiteColor3;
+
+            }
+
+    }
+
+
+}
+
+
+
+.vagon2 {
+    margin: 10px 29px;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    display: none;
+    background-color: $blueWhiteColor;
+    position: relative;
+    height: 165px;
+    width: 960px;
+    border: 3px solid $grayLightColor;
+    border-radius: 15px;
+
+    .locuri2 {
+@include flex-bilet();
+        padding: 10px 15px;
+        width: 100%;
+        .bst button {
+            cursor: no-drop;
+            border: none;
+            text-decoration: line-through $redColor 1px;
+            background-color: $grayColor;
+            color: $whiteColor2;
+            }
+
+            .seat-selected {
+                color: $whiteColor3;
+            }
+    }
+        button {
+            border: 1px solid $blueColor;
+        height: 30px;
+        width: 45px;
+        border-radius: 5px;
+        background-color: $whiteColor2;
+        font-size: $fontSizeInput;
+        font-weight: 700;
+        color: $grayColor;
+        cursor: pointer;
+        transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+
+    }
+
+}
+
+
+
+
+
+
+
+.vagon3 {
+    margin: 10px 29px;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    display: none;
+    background-color: $blueWhiteColor;
+    position: relative;
+    height: 165px;
+    width: 960px;
+    border: 3px solid $grayLightColor;
+    border-radius: 15px;
+
+    .locuri3 {
+@include flex-bilet();
+        padding: 10px 15px;
+        width: 100%;
+        .bst button {
+            cursor: no-drop;
+            border: none;
+            text-decoration: line-through $redColor 1px;
+            background-color: $grayColor;
+            color: $whiteColor2;
+            }
+
+            .seat-selected {
+                color: $whiteColor3;
+            }
+    }
+        button {
+            border: 1px solid $blueColor;
+        height: 30px;
+        width: 45px;
+        border-radius: 5px;
+        background-color: $whiteColor2;
+        font-size: $fontSizeInput;
+        font-weight: 700;
+        color: $grayColor;
+        cursor: pointer;
+        transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+
+    }
+
+}
+
+.vagon.show,
+.vagon2.show,
+.vagon3.show,
+.vagon4.show {
+    display: block;
+    opacity: 1;
+}
+
+.vagon4 {
+    margin: 10px 29px;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    display: none;
+    background-color: $blueWhiteColor;
+    position: relative;
+    height: 130px;
+    width: 950px;
+border-radius: 15px;
+    border-top-left-radius: 9% 35%;
+    border-bottom-left-radius:9% 35%;
+    border: 3px solid $grayLightColor;
+
+        .locuri4 {
+            @include flex-bilet();
+            padding: 12px 28px;
+                .bst button {
+                    cursor: no-drop;
+                    border: none;
+                    text-decoration: line-through 2px $redColor;
+                    background-color: $grayColor;
+                    color: $whiteColor;
+                    }
+
+            .seat-selected {
+                color: $whiteColor3;
+
+            }
+                button {
+                    border: 1px solid $blueColor;
+                    height: 30px;
+                    width: 45px;
+                    border-radius: 5px;
+                    background-color: $whiteColor2;
+                    font-size: $fontSizeInput;
+                    font-weight: bold;
+                    color: $grayColor;
+                    cursor: pointer;
+                    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+                    margin: 10px 7px ;
+                }
+            }
+}
+
+
+@media (max-width: 1068px) {
+    .vagon,.vagon2,.vagon3,.vagon4 {
+        border-radius: 15px;
+        width: 100%;
+        height: auto;
+        margin: 20px 0;
+        padding: 25px;
+
+        .locuri {
+            padding: 5px;
+            button {
+                margin: 5px 0;
+                font-size: $fontSizep;
+            }
+        }
+    }
+}
+
+
+@media (max-width: 576px) {
+    .vagon,.vagon2,.vagon3,.vagon4 {
+        border-radius: 15px;
+        width: 100%;
+        height: auto;
+        margin: 20px 0;
+        padding: 25px;
+
+        .locuri {
+            padding: 5px;
+            button {
+                margin: 5px 0;
+                font-size: $fontSizep;
+            }
+        }
+    }
+}
+
+
+
+.inf {
+
+@include flex-start();
+    padding: 5px;
+    gap: 10px;
+
+
+p{
+    font-size: $fontSizep;
+    font-weight: 700;
+    color: $grayColor;
+}
+
+
+}
+
+
+
+@media (max-width: 1068px) {
+    .inf{
+        border: 2px solid $blueColor;
+        border-radius: 10px;
+        margin: auto;
+        @include flex-column();
+    }
+
+}
+
+@media (max-width: 576px) {
+    .inf{
+        border: 2px solid $blueColor;
+        border-radius: 5px;
+        margin: auto;
+        @include flex-column();
+    }
+
+}
+
+.seets_info{
+    margin: auto;
+    gap: 10px;
+    @include flex-center();
+    .enable {
+        border: 1px solid $blueColor;
+        border-radius: 5px;
+        height: 20px;
+        width: 30px;
+        background-color: $blueWhiteColor;
+
+    }
+    p{
+        font-size: $fontSizep;
+        font-weight: 700;
+        color: $blueColor;
+    }
+
+    .disable {
+        border-radius: 5px;
+        font-size: $fontSizep;
+        font-weight: 700;
+        color:$grayLightColor;
+        height: 20px;
+        width: 30px;
+        background-color: $grayColor;
+
+    }
+}
+
+
+
+
+@media (max-width: 1068px) {
+    .seets_info{
+        margin: auto;
+        @include flex-column();
+    }
+
+}
+
+
+@media (max-width: 576px) {
+    .seets_info{
+        margin: auto;
+        @include flex-column();
+    }
+
+}
+
+
+.complete-form {
+    border-radius: 20px;
+    background-color: $blueWhiteColor2;
+    @include flex-between();
+    height: auto;
+    width: 100%;
+    padding: 5px 15px;
+span {
+    font-size: $fontSizep;
+    font-weight: 700;
+    color: $redColor;
+}
+div {
+    font-size: $fontSizep;
+    font-weight: 500;
+    color: $grayColor;
+}
+    .open {
+        cursor: pointer;
+        height: 37px;
+        width: 250px;
+        font-weight: 600;
+        background-color: $grayLightColor;
+        font-size: $fontSizeButtonMin;
+        padding: 5px;
+        color: $whiteColor3;
+        border: none;
+        border-radius: 15px;
+        text-align: center;
+        transition: .2s ease;
+    &:hover{
+        filter: brightness(95%);
+        background-color: $blueColor;
+
+    }
+}
+}
+
+
+@media (max-width: 1068px) {
+    .complete-form{
+        margin: auto;
+        padding: 10px;
+        margin-top: 20px;
+        @include flex-column();
+.open{
+    width: 250px;
+    font-size: $fontSizeH4;
+}
+
+    }
+
+}
+@media (max-width: 576px) {
+    .complete-form{
+        margin: auto;
+        padding: 10px;
+        margin-top: 20px;
+        @include flex-column();
+.open{
+    width: 250px;
+    font-size: $fontSizeH4;
+}
+
+    }
+
+}
+
+
+.vagon-image {
+height: auto;
+width: auto;
+
+
+
+.open {
+    cursor: pointer;
+    height: 37px;
+    width: 140px;
+    font-weight: 600;
+    background-color: $blueColor;
+    font-size: $fontSizeButtonMin;
+    padding: 5px;
+    color: $whiteColor;
+    border: none;
+    border-radius: 15px;
+    text-align: center;
+    transition: .2s ease;
+&:hover{
+    filter: brightness(92%);
+}
+}
+
+}
+
+@media (max-width: 1068px) {
+    .vagon-image{
+        margin: 10px;
+        padding: 10px;
+        margin: auto;
+        @include flex-column();
+.open{
+    text-decoration: none;
+    font-size: $fontSizep;
+    width: 150px;
+    font-size: $fontSizeH4;
+}
+
+    }
+
+}
+
+@media (max-width: 576px) {
+    .vagon-image{
+        margin: 10px;
+        padding: 10px;
+        margin: auto;
+        @include flex-column();
+.open{
+    text-decoration: none;
+    font-size: $fontSizep;
+    width: 150px;
+    font-size: $fontSizeH4;
+}
+
+    }
+
+}
+
+
+
+
+.modal-popUp {
+    visibility: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    transition: opacity 0.3s ease, visibility 0s linear 0.3s;
+    &.active {
+        visibility: visible;
+        opacity: 1;
+        transition-delay: 0s;
+
+        .popup-images {
+            opacity: 1;
+        }
+    }
+
+    .popup-images {
+     @include flex-center();
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+
+        img{
+            height:450px;
+            object-fit: cover;
+            max-width: 100%;
+filter: contrast(110%);
+filter: brightness(110%);
+border-radius: 15px;
+border: 1px solid $grayLightColor;
+
+        }
+
+    }
+
+}
+
+
+.swiper {
+    height: 350px;
+width: 860px;
+border-radius: 15px;
+.swiper-slide{
+    width: 100%;
+    height: 100%;
+    img {
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+
+        }
+    }
+
+}
+
+.no-scroll {
+    overflow: hidden;
+}
+
+
+
+
+@media (max-width: 1068px) {
+    .popup-images{
+width: 100%;
+    }
+
+}
+
+
+@media (max-width: 576px) {
+    .popup-images{
+width: 100%;
+    }
+
+}
+
+
+
+
+
+// Formular de completare
+
+.all-log {
+@include flex-column();
+
+
+h4{
+    text-align: center;
+    font-size: $fontSizeH3;
+    color: $grayColor;
+}
+
+}
+
+.login_form {
+@include flex-column();
+width: 100%;
+height: 100%;
+padding: 15px;
+
+form {
+@include flex-column();
+
+}
+
+input {
+    margin: 5px;
+    border: none;
+    width: 275px;
+    font-weight: 600;
+    padding: 5px;
+    font-size: $fontSizeInput;
+    border: 1px solid $blueColor;
+    border-radius: 10px;
+    height: auto;
+    transition: .3s ease;
+
+    &:focus {
+        outline: none;
+        border: 1px solid $grayColor;
+    }
+
+
+}
+
+.auth_login {
+    border: 1px solid $blueWhiteColor;
+    @include flex-center();
+    padding: 10px 15px;
+    background-color: $whiteColor;
+    height: 100%;
+    width: 620px;
+    border-radius: 15px;
+
+
+}
+
+.button-send {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    button {
+        margin: 10px 15px;
+        cursor: pointer;
+        height: 40px;
+        width: 275px;
+        background-color: $blueColor;
+        font-size: $fontSizeButtonMin;
+        font-weight: 700;
+        padding: 5px;
+        color: $whiteColor2;
+        border: none;
+        border-radius: 15px;
+        text-align: center;
+        transition: .2s ease;
+
+        &:hover {
+            filter: brightness(92%);
+        }
+    }
+
+
+}
+
+p {
+    text-align: center;
+    font-size: $fontSizep;
+    color: $redColor;
+    font-weight: 700;
+}
+
+h3{
+    text-align: center;
+    font-size: $fontSizeH3;
+    color: $blueColor;
+}
+
+
+}
+
+.infor {
+    @include flex-column();
+
+}
+.login_div {
+    @include flex-column();
+    height: 160px;
+    width: 550px;
+    padding: 15px 25px;
+    background-color: $blueWhiteColor;
+    border-radius: 15px;
+    text-align: center;
+    p {
+        text-align: center;
+        font-size: $fontSizep;
+        color: $redColor;
+        font-weight: 700;
+    }
+
+    h4 {
+        text-align: center;
+        font-size: $fontSizeH4;
+        color: $blueColor;
+    }
+
+
+}
+
+label{
+    text-align: center;
+    font-size: $fontSizep;
+    color: $grayColor;
+    font-weight: 700;
+}
+
+
+
+
+
+
+
+@media (max-width: 1068px) {
+    .login_div{
+        height: 100%;
+
+    }
+
+    .train_info {
+        height: 100%;
+        width: 100%;
+        @include flex-column();
+
+
+        }
+
+
+
+    .all-log{
+        h4{
+            color: $grayColor;
+            font-weight: 600;
+            font-size: $fontSizeH4;
+        }
+
+        .login_form input{
+            width: 230px;
+        }
+        .button-send button{
+            width: 230px;
+        }
+}
+    }
+
+
+
+
+
+    @media (max-width: 576px) {
+        .login_div{
+            height: 100%;
+    width: 100%;
+
+        }
+
+        .train_info {
+            height: 100%;
+            width: 100%;
+            @include flex-column();
+
+
+            }
+
+
+
+        .all-log{
+            h4{
+                color: $grayColor;
+                font-weight: 600;
+                font-size: $fontSizeH4;
+            }
+
+            .login_form input{
+                width: 230px;
+            }
+            .button-send button{
+                width: 230px;
+            }
+    }
+        }
+
+// Loading page
+
+
+.sendDate {
+padding: 20px 15px;
+@include flex-column();
+width: 100%;
+height: 100%;
+.succes-date{
+    padding: 10px;
+    border-radius: 50%;
+    height: 210px;
+}
+.loading-img {
+    height: 150px;
+    display: none;
+}
+
+h2{
+    text-align: center;
+    margin: 10px 15px;
+    color: $blueColor;
+    font-size: $fontSizeH2;
+    font-weight: 700;
+
+}
+
+.modal-send{
+    height: 100%;
+    width: 80%;
+    background-color: $blueWhiteColor;
+    border-radius: 15px;
+    text-align: center;
+}
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.hidden {
+    display: none;
+
+}
+
+
+@keyframes rotate {
+    from {
+         transform: rotate(0deg);
+        }
+    to {
+         transform: rotate(360deg);
+         }
+}
+
+
+
+
+}
+
+
+@media (max-width: 1068px) {
+.sendDate{
+    width: 100%;
+    height: 100%;
+    h2{
+        text-align: center;
+        margin: 5px 15px;
+        color: $blueColor;
+        font-size: $fontSizeH4;
+        font-weight: 700;
+
+    }
+
+}
+
+.succes-date{
+    padding: 10px;
+    border-radius: 50%;
+    height: 130px;
+}
+
+.loading-img {
+    height: 130px;
+    display: none;
+}
+}
+
+
+@media (max-width: 576px) {
+    .sendDate{
+        width: 100%;
+        height: 100%;
+        h2{
+            text-align: center;
+            margin: 5px 15px;
+            color: $blueColor;
+            font-size: $fontSizeH4;
+            font-weight: 700;
+
+        }
+
+    }
+
+    .succes-date{
+        padding: 10px;
+        border-radius: 50%;
+        height: 130px;
+    }
+
+    .loading-img {
+        height: 130px;
+        display: none;
+    }
+    }

@@ -1,0 +1,3469 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:wght@300;400;500;600;700;800&family=Pacifico&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:wght@100;300;400;500;700;900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.errors {
+  margin: 3px;
+  text-align: center;
+  font-size: 17px;
+  color: #d00000;
+  font-weight: 700;
+}
+
+.images {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.images img {
+  height: 115px;
+  border-radius: 50%;
+}
+
+.element {
+  padding: 5px 12px;
+  gap: 10px 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.element li {
+  color: #0844A8;
+  font-size: 20px;
+  font-weight: 800;
+  text-align: center;
+  position: relative;
+  transition: 0.2s ease-in-out;
+  list-style: none;
+}
+.element li:hover {
+  color: #161616;
+}
+.element a {
+  gap: 10px;
+  text-decoration: none;
+}
+.element #user {
+  border-radius: 10px;
+  background-color: #fcc53b;
+  padding: 5px;
+  width: 90px;
+  height: 72px;
+  text-align: center;
+  border: 3px solid #161616;
+  font-size: 50px;
+  gap: 5px;
+  font-weight: 600;
+  color: #161616;
+}
+
+.navbar {
+  border-radius: 20px;
+  border-top: 4px solid #fcc53b;
+  border-bottom: 3px solid #0844A8;
+  border-left: 4px solid #0844A8;
+  border-right: 4px solid #0844A8;
+  background-color: #c6d8ff;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  position: relative;
+  padding: 10px;
+}
+
+.btn {
+  width: 160px;
+  border-radius: 15px;
+  font-weight: 700;
+  height: 38px;
+  background-color: #7e7d7d;
+  color: white;
+}
+
+.open, .close {
+  position: absolute;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: none;
+}
+
+.open {
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+}
+
+.close {
+  top: 20px;
+  right: 20px;
+}
+
+@media (max-width: 576px) {
+  .element {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    right: -230%;
+    background-color: #7e7d7d;
+    transition: all 0.5s ease;
+  }
+  .element li {
+    margin-top: 21px;
+    color: #e7e6e6;
+    display: flex;
+    text-underline-offset: 8px;
+    transition: 0.2s ease;
+  }
+  .element li:hover {
+    color: #0844A8;
+  }
+  #check:checked ~ .element {
+    right: 0;
+  }
+  .btn {
+    display: flex;
+    justify-content: center;
+  }
+  .open, .close {
+    display: block;
+  }
+  #check {
+    display: none;
+  }
+}
+@media (max-width: 1068px) {
+  .element {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    right: -230%;
+    background-color: #7e7d7d;
+    transition: all 0.5s ease;
+  }
+  .element li {
+    margin-top: 50px;
+    color: #e7e6e6;
+    display: flex;
+    text-underline-offset: 8px;
+    transition: 0.2s ease;
+  }
+  .element li:hover {
+    color: #0844A8;
+  }
+  #check:checked ~ .element {
+    right: 0;
+  }
+  .btn {
+    display: flex;
+    justify-content: center;
+  }
+  .open, .close {
+    display: block;
+  }
+  #check {
+    display: none;
+  }
+}
+#check {
+  display: none;
+}
+
+.background {
+  margin: 20px 0px;
+  height: 100%;
+  width: 100%;
+  background-color: #e3e4e6;
+}
+.background img {
+  border-radius: 20%;
+  height: 150px;
+}
+.background .links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.background .links a {
+  text-decoration: none;
+  color: #161616;
+  font-size: 20px;
+  list-style: none;
+  transition: 0.2s ease;
+}
+.background .links a:hover {
+  color: #0844A8;
+}
+.background li {
+  list-style: none;
+  text-align: center;
+}
+.background .admin_href {
+  font-size: 25px;
+  color: #d00000;
+  font-weight: 700;
+  transition: 0.2s ease;
+}
+.background .admin_href:hover {
+  color: #0844A8;
+}
+.background .footer {
+  padding: 10px;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media (max-width: 1068px) {
+  .footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .background {
+    width: 100%;
+    height: 100%;
+  }
+  .background img {
+    height: 110px;
+  }
+}
+@media (max-width: 576px) {
+  .footer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .background {
+    text-align: center;
+    width: 100%;
+    height: 100%;
+  }
+  .background img {
+    height: 50px;
+  }
+}
+.container {
+  margin: auto;
+  background-repeat: no-repeat !important;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 450px;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row-reverse;
+}
+.container::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 450px;
+  background: url("https://images.unsplash.com/photo-1523464582678-6e1b404d812b?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D") no-repeat center/cover;
+  filter: blur(2px);
+  z-index: -1;
+}
+.container .swiper {
+  height: 290px;
+  width: 860px;
+  border-radius: 15px;
+}
+.container .swiper-slide {
+  width: auto;
+  height: auto;
+}
+.container .swiper-slide img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
+@media (max-width: 1068px) {
+  .container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .container .swiper {
+    display: none;
+  }
+}
+@media (max-width: 576px) {
+  .container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+.formular {
+  position: relative;
+  padding: 15px;
+  background-color: #e7e6e6;
+  height: 290px;
+  width: 350px;
+  border-radius: 15px;
+}
+.formular h3 {
+  text-align: center;
+  font-size: 25px;
+  color: #0844A8;
+  font-weight: 700;
+}
+.formular h4 {
+  text-align: center;
+  font-size: 20px;
+  color: #0844A8;
+  font-weight: 600;
+}
+
+.form-group {
+  margin: 15px 15px;
+  width: auto;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.input_right,
+.input_left {
+  font-weight: 600;
+  padding: 2px;
+  font-size: 15px;
+  border: 1px solid #161616;
+  border-radius: 10px;
+  height: 33px;
+  width: calc(85% - 5px);
+  transition: 0.3s ease;
+}
+.input_right:focus,
+.input_left:focus {
+  outline: none;
+  border: 1px solid #0844A8;
+}
+
+.button-search {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.button-search button {
+  margin: 10px 15px;
+  cursor: pointer;
+  height: 50px;
+  width: 240px;
+  background-color: #0844A8;
+  font-size: 26px;
+  font-weight: 700;
+  padding: 5px;
+  color: #e7e6e6;
+  border: none;
+  border-radius: 18px;
+  text-align: center;
+  transition: 0.2s ease;
+}
+.button-search button:hover {
+  filter: brightness(92%);
+}
+
+#switch-button {
+  position: absolute;
+  right: 1.5rem;
+  top: 46%;
+  transform: translateY(-50%);
+}
+#switch-button i {
+  color: #0844A8;
+  font-size: 17px;
+  transition: 0.3s ease;
+}
+#switch-button button {
+  background-color: white;
+  border-radius: 10px;
+  border: 1px solid #0844A8;
+  cursor: pointer;
+  width: 24px;
+  height: 33px;
+  transition: 0.3s ease;
+}
+#switch-button button:hover {
+  background-color: #c6d8ff;
+}
+
+@media (max-width: 1068px) {
+  #switch-button {
+    right: 1.5rem;
+    top: 46%;
+  }
+  #switch-button i {
+    padding: 5px;
+  }
+}
+@media (max-width: 576px) {
+  .formular {
+    width: 100%;
+    height: 100%;
+  }
+  .formular h3 {
+    font-size: 20px;
+  }
+  .formular h4 {
+    font-size: 17px;
+  }
+  .button-search {
+    width: 100%;
+    height: 100%;
+  }
+  .button-search button {
+    width: 150px;
+    height: 40px;
+    font-size: 20px;
+    text-align: center;
+    margin: 0px;
+  }
+}
+@media (max-width: 576px) {
+  #switch-button {
+    right: 1.3rem;
+    top: 50%;
+  }
+  #switch-button i {
+    padding: 5px;
+  }
+}
+.pages-home {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+.pages-home .oferte {
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  background: url("https://fotooboimoi.ru/upload/iblock/da2/da2ac15150a3653dfdad1a56a11154f6.jpg");
+  background-position: center;
+  background-size: cover;
+  height: 300px;
+  width: 500px;
+  background-repeat: no-repeat !important;
+}
+.pages-home .oferte h2 {
+  font-size: 30px;
+  color: #0844A8;
+  font-weight: 700;
+  transition: 0.2s ease;
+}
+.pages-home .oferte h2:hover {
+  color: #161616;
+}
+.pages-home .oferte a {
+  color: #0844A8;
+  transition: 0.3s ease;
+}
+.pages-home .oferte a:hover {
+  color: #161616;
+}
+.pages-home .information {
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  background: url("https://w.forfun.com/fetch/29/2983529ab8a59a77eb4c04e58d180618.jpeg?w=2500");
+  background-position: center;
+  background-size: cover;
+  height: 300px;
+  width: 500px;
+  background-repeat: no-repeat !important;
+}
+.pages-home .information h2 {
+  font-size: 30px;
+  color: #0844A8;
+  font-weight: 700;
+}
+.pages-home .information h2:hover {
+  color: #161616;
+}
+.pages-home .information a {
+  color: #0844A8;
+  transition: 0.3s ease;
+}
+.pages-home .information a:hover {
+  color: #161616;
+}
+
+@media (max-width: 1068px) {
+  .pages-home {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .pages-home .oferte, .pages-home .information {
+    margin: 20px;
+    width: 550px;
+    height: 250px;
+  }
+  .pages-home .oferte h2, .pages-home .information h2 {
+    font-size: 25px;
+  }
+}
+@media (max-width: 576px) {
+  .pages-home {
+    padding: 10px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .pages-home .oferte, .pages-home .information {
+    width: 340px;
+    height: 180px;
+  }
+  .pages-home .oferte h2, .pages-home .information h2 {
+    font-size: 20px;
+  }
+}
+.pages-home2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+.pages-home2 .despre-back {
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  background: url("../Images/DPK9.jpg");
+  background-position: center;
+  background-size: cover;
+  height: 300px;
+  width: 600px;
+  background-repeat: no-repeat !important;
+}
+.pages-home2 .despre-back h2 {
+  font-size: 30px;
+  color: #0844A8;
+  font-weight: 700;
+}
+.pages-home2 .despre-back h2:hover {
+  color: #161616;
+}
+.pages-home2 .despre-back a {
+  color: #0844A8;
+  transition: 0.3s ease;
+}
+.pages-home2 .despre-back a:hover {
+  color: #161616;
+}
+.pages-home2 .info-contact {
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  background: url("../Images/tren6.jpg");
+  background-position: center;
+  background-size: cover;
+  height: 300px;
+  width: 600px;
+  background-repeat: no-repeat !important;
+}
+.pages-home2 .info-contact h2 {
+  font-size: 30px;
+  color: #0844A8;
+  font-weight: 700;
+}
+.pages-home2 .info-contact h2:hover {
+  color: #161616;
+}
+.pages-home2 .info-contact a {
+  color: #0844A8;
+  transition: 0.3s ease;
+}
+.pages-home2 .info-contact a:hover {
+  color: #161616;
+}
+
+@media (max-width: 1068px) {
+  .pages-home2 {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .pages-home2 .despre-back, .pages-home2 .info-contact {
+    margin: 20px;
+    width: 550px;
+    height: 250px;
+  }
+  .pages-home2 .despre-back h2, .pages-home2 .info-contact h2 {
+    font-size: 25px;
+  }
+}
+@media (max-width: 576px) {
+  .pages-home2 {
+    padding: 10px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .pages-home2 .despre-back, .pages-home2 .info-contact {
+    margin: 20px;
+    width: 340px;
+    height: 180px;
+  }
+  .pages-home2 .despre-back h2, .pages-home2 .info-contact h2 {
+    font-size: 20px;
+  }
+}
+.result-search {
+  margin: auto;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+  background: url("https://rail-research.europa.eu/wp-content/uploads/2021/03/train_highspeed_blurry_bluefilter40-scaled-e1618215603367.jpg");
+  background-position: center;
+  background-size: cover;
+  height: 440px;
+  width: 100%;
+  filter: brightness(130%);
+  background-repeat: no-repeat !important;
+}
+.result-search h2 {
+  font-size: 30px;
+  color: #0844A8;
+  font-weight: 800;
+}
+
+.result-search2 {
+  margin: auto;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+  background: url("https://conversationstation.co.za/wp-content/uploads/2018/11/Conversation-Station_Warning-Light.jpg");
+  background-position: center;
+  background-size: cover;
+  height: 440px;
+  width: 100%;
+  filter: brightness(130%);
+  background-repeat: no-repeat !important;
+}
+.result-search2 h2 {
+  font-size: 30px;
+  color: #d00000;
+  font-weight: 800;
+}
+
+.search_error {
+  margin: auto;
+  height: 70px;
+  width: 250px;
+  padding: 10px 20px;
+  background-color: #c6d8ff;
+  border-radius: 15px;
+  text-align: center;
+}
+
+p {
+  font-size: 17px;
+  color: #d00000;
+  font-weight: 700;
+}
+
+.route-container {
+  gap: 5px;
+  padding: 10px 5px;
+  background-color: white;
+}
+.route-container h3 {
+  font-size: 25px;
+  font-weight: 700;
+  color: #0844A8;
+}
+.route-container .train_number {
+  border-radius: 10px;
+  padding: 10px 10px;
+  background-color: #e3e4e6;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  flex-direction: row-reverse;
+}
+.route-container .train_number h4 {
+  text-align: center;
+  font-size: 20px;
+  color: #0844A8;
+  font-weight: 600;
+}
+.route-container .train_number img {
+  height: 74px;
+  border-radius: 50%;
+}
+.route-container .train_number span {
+  color: #0844A8;
+  font-size: 25px;
+}
+.route-container .train_info {
+  background-color: #c6d8ff;
+  padding: 10px 15px;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.route-container .train_info button {
+  margin: 10px 15px;
+  cursor: pointer;
+  height: 40px;
+  width: 200px;
+  background-color: #0844A8;
+  font-size: 20px;
+  font-weight: 700;
+  padding: 5px;
+  color: #e7e6e6;
+  border: none;
+  border-radius: 18px;
+  text-align: center;
+  transition: 0.2s ease;
+}
+.route-container .train_info button:hover {
+  filter: brightness(92%);
+}
+.route-container .train_info button h3 {
+  font-size: 25px;
+  font-weight: 700;
+  color: #0844A8;
+}
+
+.train_infoCancel {
+  padding: 10px;
+  background-color: #d00000;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.train_infoCancel .station {
+  display: flex;
+  flex-direction: row-reverse;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.train_infoCancel .station .csa {
+  text-align: center;
+  font-size: 25px;
+  color: white;
+  font-weight: 600;
+}
+
+.duration {
+  width: auto;
+  height: auto;
+}
+
+p {
+  font-size: 17px;
+  font-weight: 600;
+  color: #161616;
+}
+
+@media (max-width: 1068px) {
+  .route-value {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .route-value .train_number {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    gap: 12px 15px;
+  }
+  .route-value .train_info {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+}
+@media (max-width: 576px) {
+  .route-value1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+  }
+  .route-value1 .train_number {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 25px 15px;
+    padding: 10px;
+  }
+  .route-value1 .train_info {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+}
+.abonamente {
+  background: url("https://fotooboimoi.ru/upload/iblock/da2/da2ac15150a3653dfdad1a56a11154f6.jpg");
+  background-repeat: no-repeat !important;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 360px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.abonamente h2 {
+  font-size: 30px;
+  color: #d00000;
+  font-weight: 800;
+}
+.abonamente .swiper {
+  height: 300px;
+  width: 950px;
+  border: 1px solid #0844A8;
+  box-shadow: 1px 1px 4px 4px solid #161616;
+  border-radius: 20px;
+}
+.abonamente .swiper-slide {
+  width: auto;
+  height: auto;
+}
+.abonamente .swiper-slide img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
+@media (max-width: 1068px) {
+  .abonamente {
+    width: 100%;
+    height: 100%;
+  }
+  .abonamente h2 {
+    text-align: center;
+    font-size: 20px;
+  }
+  .abonamente .swiper {
+    width: 100%;
+    height: 100%;
+  }
+}
+@media (max-width: 576px) {
+  .abonamente {
+    width: 100%;
+    height: 100%;
+  }
+  .abonamente .swiper {
+    width: 100%;
+    height: 100%;
+  }
+}
+.info-abonament {
+  padding: 15px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal_div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 160px;
+  width: 550px;
+  padding: 15px 25px;
+  background-color: #e3e4e6;
+  border-radius: 15px;
+  text-align: center;
+}
+.modal_div p {
+  text-align: center;
+  font-size: 17px;
+  color: #d00000;
+  font-weight: 700;
+}
+.modal_div h4 {
+  text-align: center;
+  font-size: 20px;
+  color: #0844A8;
+}
+.modal_div h3 {
+  font-size: 25px;
+  font-weight: 700;
+  color: #0844A8;
+  text-align: center;
+}
+
+.back-info {
+  background: url("https://s3-us-west-2.amazonaws.com/eagleagent-orig/uploads%2F1678754324429-0krnd7w3bubj-41605c4436d86559d05f89e11b405b74%2FTrain.jpg");
+  background-repeat: no-repeat !important;
+  background-size: cover;
+  background-position: center;
+  width: 900px;
+  border-radius: 20px;
+  border-top: 4px solid #fcc53b;
+  border-bottom: 4px solid rgb(255, 153, 0);
+  border-left: 4px solid #0844A8;
+  border-right: 4px solid #0844A8;
+  height: 340px;
+  margin: auto;
+}
+.back-info h3 {
+  text-align: center;
+  font-size: 25px;
+  color: #0844A8;
+}
+.back-info .m-foto {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 25px;
+}
+.back-info .m-foto img {
+  height: 140px;
+  border-radius: 50%;
+}
+
+@media (max-width: 1068px) {
+  .back-info {
+    width: 100%;
+    height: 100%;
+  }
+  .back-info h3 {
+    font-size: 20px;
+  }
+  .m-foto {
+    width: 100%;
+    height: 100%;
+  }
+  .m-foto img {
+    height: 100px;
+  }
+  .info-abonament {
+    width: 100%;
+    height: 100%;
+  }
+  .info-abonament h3 {
+    font-size: 20px;
+  }
+  .info-abonament p {
+    font-size: 17px;
+  }
+}
+@media (max-width: 576px) {
+  .back-info {
+    width: 100%;
+    height: 100%;
+  }
+  .back-info h3 {
+    font-size: 20px;
+  }
+  .m-foto {
+    width: 100%;
+    height: 100%;
+  }
+  .m-foto img {
+    height: 50px;
+  }
+  .info-abonament {
+    width: 100%;
+    height: 100%;
+  }
+  .info-abonament h3 {
+    font-size: 20px;
+  }
+  .info-abonament p {
+    font-size: 17px;
+  }
+}
+.reguli {
+  padding: 15px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.reguli .modal_div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  width: 900px;
+  padding: 15px 25px;
+  background-color: #e3e4e6;
+  border-radius: 15px;
+  text-align: center;
+}
+.reguli .modal_div p {
+  margin: 5px;
+  text-align: center;
+  font-size: 17px;
+  color: #d00000;
+  font-weight: 700;
+}
+.reguli .modal_div li {
+  color: #0844A8;
+}
+
+@media (max-width: 1068px) {
+  .modal_div {
+    height: 100%;
+    width: 100%;
+  }
+}
+@media (max-width: 576px) {
+  .modal_div {
+    height: 100%;
+    width: 100%;
+  }
+}
+.buy {
+  width: 100%;
+  height: 100%;
+}
+.buy .abonament-alls {
+  background-color: #c6d8ff;
+  padding: 10px 15px;
+  text-align: center;
+  margin: auto;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.buy .abonament-alls button {
+  padding: 10px;
+  cursor: pointer;
+  height: 50px;
+  width: 250px;
+  background-color: #0844A8;
+  font-size: 20px;
+  font-weight: 700;
+  padding: 5px;
+  color: #e7e6e6;
+  border: none;
+  border-radius: 18px;
+  text-align: center;
+  transition: 0.2s ease;
+}
+.buy .abonament-alls button:hover {
+  filter: brightness(92%);
+}
+.buy img {
+  height: 200px;
+  border: 1px solid #0844A8;
+  border-radius: 15px;
+}
+
+@media (max-width: 1068px) {
+  .buy {
+    height: 100%;
+    width: 100%;
+  }
+  .buy img {
+    width: 100%;
+    height: 100%;
+    border: 1px solid #0844A8;
+    border-radius: 15px;
+  }
+  .abonament-alls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 10px 14px;
+    width: 100%;
+    height: 100%;
+  }
+  .abonament-alls button {
+    margin: 20px;
+  }
+}
+@media (max-width: 576px) {
+  .buy {
+    height: 100%;
+    width: 100%;
+  }
+  .buy .abonament-alls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+  }
+  .buy .abonament-alls button {
+    margin: 20px;
+    height: 40px;
+    width: 200px;
+    font-size: 20px;
+  }
+  .buy img {
+    width: 100%;
+    height: 100%;
+    border: 1px solid #0844A8;
+    border-radius: 15px;
+  }
+}
+.sel {
+  margin: auto;
+  height: 100%;
+  width: 900px;
+  padding: 15px 25px;
+  background-color: #c6d8ff;
+  border-radius: 15px;
+  text-align: center;
+}
+.sel h3 {
+  text-align: center;
+  font-size: 25px;
+  color: #0844A8;
+}
+
+@media (max-width: 1068px) {
+  .sel {
+    height: 100%;
+    width: 100%;
+  }
+}
+@media (max-width: 576px) {
+  .sel {
+    height: 100%;
+    width: 100%;
+  }
+}
+.formular-abonament.show {
+  display: block;
+  max-height: 1000px;
+  opacity: 1;
+}
+
+.formular-abonament {
+  background-color: #e3e4e6;
+  display: none;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+  opacity: 0;
+}
+
+.all-log {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.all-log h3 {
+  text-align: center;
+  font-size: 25px;
+  color: #161616;
+}
+
+.login_form {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+}
+.login_form form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.login_form input {
+  margin: 5px;
+  border: none;
+  width: 275px;
+  font-weight: 600;
+  padding: 5px;
+  font-size: 15px;
+  border: 1px solid #0844A8;
+  border-radius: 10px;
+  height: auto;
+  transition: 0.3s ease;
+}
+.login_form input:focus {
+  outline: none;
+  border: 1px solid #161616;
+}
+.login_form .button-send {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px;
+}
+.login_form .button-send button {
+  cursor: pointer;
+  height: 40px;
+  width: 275px;
+  background-color: #0844A8;
+  font-size: 20px;
+  font-weight: 700;
+  color: white;
+  border: none;
+  border-radius: 15px;
+  text-align: center;
+  transition: 0.2s ease;
+}
+.login_form .button-send button:hover {
+  filter: brightness(92%);
+}
+.login_form .prices {
+  padding: 3px;
+  width: auto;
+  height: auto;
+}
+.login_form .prices button {
+  border: none;
+  border-radius: 15px;
+  text-align: center;
+  transition: 0.2s ease;
+  height: 35px;
+  width: 120px;
+  background-color: #d00000;
+  font-size: 20px;
+  font-weight: 700;
+  color: white;
+}
+
+@media (max-width: 576px) {
+  .login_form {
+    width: 100%;
+    height: 100%;
+  }
+  .button-send button {
+    height: 40px;
+    width: 200px;
+    font-size: 26px;
+  }
+}
+.intrebari {
+  padding: 15px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.intrebari h3 {
+  text-align: center;
+  font-size: 25px;
+  color: white;
+}
+.intrebari .modal_div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  width: 900px;
+  padding: 15px 25px;
+  background-color: #0844A8;
+  border-radius: 15px;
+  text-align: center;
+}
+.intrebari img {
+  border-radius: 50%;
+  height: 150px;
+}
+
+.question {
+  width: 100%;
+  height: 100%;
+}
+.question .questions-all {
+  background-color: #e3e4e6;
+  text-align: center;
+  margin: auto;
+  width: 900px;
+  padding: 10px 21px;
+  border-radius: 15px;
+  height: 95px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.question .questions-all button {
+  cursor: pointer;
+  height: 45px;
+  width: 55px;
+  background-color: #161616;
+  font-size: 20px;
+  font-weight: 700;
+  color: #e7e6e6;
+  border: none;
+  border-radius: 15px;
+  text-align: center;
+  transition: 0.2s ease;
+}
+.question .questions-all button:hover {
+  background-color: #0844A8;
+}
+.question img {
+  height: 200px;
+  border: 1px solid #0844A8;
+  border-radius: 15px;
+}
+.question h3 {
+  text-align: center;
+  font-size: 25px;
+  color: #0844A8;
+}
+
+@media (max-width: 1068px) {
+  .question .formular-question {
+    width: 100%;
+    height: 100%;
+  }
+  .question .questions-all {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+  }
+}
+@media (max-width: 576px) {
+  .question .formular-question {
+    width: 100%;
+    height: 100%;
+  }
+  .question h3 {
+    font-size: 20px;
+  }
+  .question .questions-all {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+  }
+  .question .questions-all button {
+    height: 30px;
+    width: 40px;
+    font-size: 17px;
+    font-weight: 600;
+  }
+}
+.formular-question.show {
+  display: block;
+  max-height: 1000px;
+  opacity: 1;
+}
+
+.formular-question {
+  margin: 3px auto;
+  height: 100%;
+  border-radius: 5px;
+  text-align: center;
+  width: 900px;
+  background-color: #c6d8ff;
+  display: none;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+  opacity: 0;
+}
+.formular-question p {
+  text-align: center;
+  margin: 7px;
+  color: #161616;
+  font-size: 17px;
+  font-weight: 500;
+}
+.formular-question h3 {
+  margin: 10px;
+  text-align: center;
+  font-size: 25px;
+  color: #0844A8;
+}
+.formular-question a {
+  color: #0844A8;
+}
+
+.banner {
+  padding: 5px 14px;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  background: url("https://mpg-machining.com/img/home/Ferrovial.jpg");
+  background-repeat: no-repeat !important;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 400px;
+}
+.banner h2 {
+  font-size: 30px;
+  color: #0844A8;
+  font-weight: 700;
+}
+
+.banners {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+.banners img {
+  object-fit: cover;
+  height: 30%;
+  width: 60%;
+  border: 2px solid #fcc53b;
+  border-radius: 15px;
+  transition: 0.2s ease;
+}
+.banners img:hover {
+  border: 2px solid #161616;
+}
+.banners .modal_div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  height: 160px;
+  width: 550px;
+  padding: 15px 25px;
+  border: 3px solid #fcc53b;
+  background-color: #0844A8;
+  border-radius: 15px;
+  text-align: center;
+}
+.banners h2 {
+  color: white;
+  font-size: 30px;
+  font-weight: 700;
+  text-align: center;
+}
+.banners .ims {
+  height: 610px;
+  width: 60%;
+  border: 2px solid #fcc53b;
+  border-radius: 15px;
+  transition: 0.2s ease;
+}
+.banners .ims:hover {
+  border: 2px solid #0844A8;
+}
+.banners a {
+  text-align: center;
+}
+
+@media (max-width: 1068px) {
+  .banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .banner h2 {
+    color: #fcc53b;
+    font-weight: bold;
+  }
+  .banners {
+    width: 100%;
+    height: 100%;
+  }
+  .banners .modal_div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 30%;
+  }
+  .banners h2 {
+    font-size: 25px;
+  }
+}
+@media (max-width: 576px) {
+  .banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .banner h2 {
+    color: #fcc53b;
+    font-weight: bold;
+    text-shadow: 2px 2px 3px #161616;
+  }
+  .banners {
+    width: 100%;
+    height: 100%;
+  }
+  .banners .modal_div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 30%;
+  }
+  .banners h2 {
+    font-size: 20px;
+  }
+}
+.banners2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+.banners2 .modal_div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  height: 100%;
+  width: 60%;
+  padding: 15px 25px;
+  border: 3px solid #0844A8;
+  background-color: #fcc53b;
+  border-radius: 15px;
+}
+.banners2 h4 {
+  color: #0844A8;
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+}
+.banners2 h3 {
+  color: #0844A8;
+  font-size: 25px;
+  font-weight: 700;
+  text-align: center;
+}
+.banners2 p {
+  color: #0844A8;
+  font-size: 17px;
+  font-weight: 700;
+  text-align: center;
+}
+
+@media (max-width: 1068px) {
+  .banners2 .modal_div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+  }
+  .banners2 .ims {
+    width: 100%;
+    height: 100%;
+  }
+}
+@media (max-width: 576px) {
+  .banners2 .modal_div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+  }
+  .banners2 .ims {
+    width: 100%;
+    height: 100%;
+  }
+  .banners2 .ims img {
+    width: 100%;
+    height: 100%;
+  }
+}
+.travel {
+  background: url("../Images/DPK3.jpg");
+  background-repeat: no-repeat !important;
+  background-size: cover;
+  background-position: center;
+  height: 550px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.travel h2 {
+  font-size: 30px;
+  color: white;
+  text-shadow: 1px 2px 2px #161616;
+  font-weight: 800;
+}
+.travel .swiper {
+  height: 100%;
+  width: 100%;
+  border: 1px solid #0844A8;
+  box-shadow: 1px 1px 4px 4px solid #161616;
+  border-radius: 20px;
+}
+.travel .swiper-slide {
+  width: auto;
+  height: auto;
+}
+.travel .swiper-slide img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
+.obj {
+  margin: auto;
+  height: 100%;
+  width: 900px;
+  padding: 15px 25px;
+  background-color: #fcc53b;
+  border-radius: 15px;
+  text-align: center;
+}
+.obj h3 {
+  text-align: center;
+  font-size: 25px;
+  color: #0844A8;
+}
+
+@media (max-width: 1068px) {
+  .obj {
+    height: 100%;
+    width: 100%;
+  }
+  .travel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+  }
+}
+@media (max-width: 576px) {
+  .obj {
+    height: 100%;
+    width: 100%;
+  }
+  .obj h3 {
+    font-size: 20px;
+  }
+  .travel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+  }
+  .travel h2 {
+    font-size: 25px;
+  }
+}
+.trv {
+  width: 100%;
+  height: 100%;
+}
+.trv .formular-abonament {
+  width: 100%;
+  height: 100%;
+}
+.trv .formular-abonament .all-log {
+  width: 100%;
+  height: 100%;
+}
+.trv .travel-alls {
+  background-color: #c6d8ff;
+  padding: 10px 15px;
+  text-align: center;
+  margin: auto;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.trv .travel-alls button {
+  cursor: pointer;
+  height: 50px;
+  width: 250px;
+  background-color: #0844A8;
+  font-size: 20px;
+  font-weight: 700;
+  padding: 5px;
+  color: #e7e6e6;
+  border: none;
+  border-radius: 18px;
+  text-align: center;
+  transition: 0.2s ease;
+}
+.trv .travel-alls button:hover {
+  filter: brightness(92%);
+}
+.trv .txth2 h2 {
+  font-size: 30px;
+  color: #0844A8;
+  text-align: center;
+  font-weight: 800;
+}
+.trv .txth2 h4 {
+  font-size: 20px;
+  color: #161616;
+  text-align: center;
+  font-weight: 600;
+}
+.trv .txth2 p {
+  font-size: 17px;
+  color: #0844A8;
+  text-align: center;
+  font-weight: 600;
+}
+.trv .town {
+  width: 550px;
+  height: 280px;
+  border: 1px solid #0844A8;
+  border-radius: 15px;
+}
+.trv .prs {
+  padding: 0 20px;
+  font-size: 17px;
+  font-weight: 500;
+  text-align: center;
+  margin: 10px 20px;
+  color: #161616;
+}
+
+@media (max-width: 1068px) {
+  .trv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+  }
+  .trv .formular-abonament .all-log {
+    width: 100%;
+    height: 100%;
+  }
+  .trv .town {
+    height: 100%;
+    width: 100%;
+  }
+}
+@media (max-width: 576px) {
+  .trv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+  }
+  .trv .formular-abonament .all-log, .trv .formular-abonament.show .all-log {
+    width: 100%;
+    height: 100%;
+  }
+  .trv .town {
+    height: 100%;
+    width: 100%;
+  }
+}
+@media (max-width: 1068px) {
+  .travel-alls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+  }
+  .travel-alls button {
+    height: 45px;
+    width: 170px;
+    font-size: 20px;
+  }
+  .travel-alls .town {
+    height: 100%;
+    width: 100%;
+  }
+}
+@media (max-width: 576px) {
+  .travel-alls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+  }
+  .travel-alls button {
+    height: 45px;
+    width: 170px;
+    font-size: 20px;
+  }
+  .travel-alls .town {
+    height: 100%;
+    width: 100%;
+  }
+}
+.register_form {
+  padding: 2px 15px;
+  margin: auto;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+  background: url("https://lexinform.com.ua/wp-content/uploads/2020/11/beautiful-blue-passenger-train-at-the-railway-stat-PBHGTZH-min-scaled.jpg");
+  background-position: center;
+  background-size: cover;
+  height: 330px;
+  width: 100%;
+  background-repeat: no-repeat !important;
+  width: 100%;
+  height: 100%;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.register_form .auth_user {
+  border: 1px solid #c6d8ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 15px;
+  background-color: #e7e6e6;
+  height: 100%;
+  position: relative;
+  width: 650px;
+  border-radius: 15px;
+}
+.register_form .auth_user .errors {
+  margin: 3px;
+  text-align: center;
+  font-size: 17px;
+  color: #d00000;
+  font-weight: 700;
+}
+.register_form .auth_user form {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+.register_form .auth_user input {
+  width: 215px;
+  margin: 5px;
+  border: none;
+  font-weight: 600;
+  padding: 5px;
+  font-size: 15px;
+  border: 1px solid #0844A8;
+  border-radius: 10px;
+  height: auto;
+  transition: 0.3s ease;
+}
+.register_form .auth_user input:focus {
+  outline: none;
+  border: 1px solid #161616;
+}
+.register_form .auth_user .login_div {
+  height: 130px;
+  width: 900px;
+  margin: 5px 10px;
+  padding: 15px 25px;
+  background-color: #c6d8ff;
+  border-radius: 15px;
+  text-align: center;
+}
+.register_form .auth_user h3 {
+  font-size: 25px;
+  color: #0844A8;
+  font-weight: 600;
+}
+.register_form .auth_user p {
+  font-size: 17px;
+  color: #161616;
+  font-weight: 500;
+}
+.register_form .auth_user a {
+  margin: 5px;
+  font-size: 20px;
+  color: #161616;
+  font-weight: 500;
+  transition: 0.2s ease;
+}
+.register_form .auth_user a:hover {
+  color: #0844A8;
+}
+.register_form .button-send {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.register_form .button-send button {
+  margin: 10px 15px;
+  cursor: pointer;
+  height: 40px;
+  width: 215px;
+  background-color: #0844A8;
+  font-size: 20px;
+  font-weight: 700;
+  padding: 5px;
+  color: white;
+  border: none;
+  border-radius: 15px;
+  text-align: center;
+  transition: 0.2s ease;
+}
+.register_form .button-send button:hover {
+  filter: brightness(92%);
+}
+.register_form .password-container2 {
+  position: relative;
+  display: inline-block;
+}
+.register_form .password-container2 .toggle-password {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  pointer-events: auto;
+}
+.register_form .password-container2 .toggle-password i {
+  color: #0844A8;
+}
+
+@media (max-width: 1068px) {
+  .register_form {
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .register_form .auth_user {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+  }
+  .register_form .auth_user .login_div {
+    height: 100%;
+    width: 100%;
+  }
+}
+@media (max-width: 576px) {
+  .register_form {
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .register_form .auth_user {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+  }
+  .register_form .auth_user .login_div {
+    height: 100%;
+    width: 100%;
+  }
+}
+.register_login {
+  padding: 2px 15px;
+  margin: auto;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+  background: url("https://www.bdbpitmans.com/wp-content/uploads/Train-track.jpg");
+  background-position: center;
+  background-size: cover;
+  height: 330px;
+  width: 100%;
+  background-repeat: no-repeat !important;
+}
+.register_login h2 {
+  text-align: center;
+  font-size: 30px;
+  color: #0844A8;
+  font-weight: 700;
+}
+
+.login_form {
+  width: 100%;
+  height: 100%;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.login_form .auth_login {
+  border: 1px solid #c6d8ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 5px 15px;
+  background-color: #e7e6e6;
+  height: 100%;
+  position: relative;
+  width: 620px;
+  border-radius: 15px;
+}
+.login_form .auth_login h3 {
+  text-align: center;
+  font-size: 25px;
+  color: #161616;
+  font-weight: 700;
+}
+.login_form .auth_login form {
+  text-align: center;
+}
+.login_form .auth_login input {
+  margin: 5px;
+  border: none;
+  width: 215px;
+  font-weight: 600;
+  padding: 5px;
+  font-size: 15px;
+  border: 1px solid #0844A8;
+  border-radius: 10px;
+  height: auto;
+  transition: 0.3s ease;
+}
+.login_form .auth_login input:focus {
+  outline: none;
+  border: 1px solid #161616;
+}
+.login_form .auth_login .password-container {
+  position: relative;
+  display: inline-block;
+}
+.login_form .auth_login .password-container .toggle-password {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  pointer-events: auto;
+}
+.login_form .auth_login .password-container .toggle-password i {
+  color: #0844A8;
+}
+.login_form .button-send {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.login_form .button-send button {
+  cursor: pointer;
+  height: 40px;
+  width: 215px;
+  background-color: #0844A8;
+  font-size: 20px;
+  font-weight: 700;
+  color: white;
+  border: none;
+  border-radius: 15px;
+  text-align: center;
+  transition: 0.2s ease;
+}
+.login_form .button-send button:hover {
+  filter: brightness(92%);
+}
+.login_form .delete_account {
+  text-align: center;
+  margin: auto;
+  height: 100%;
+  width: 100%;
+}
+.login_form .delete_account #delete-user {
+  background-color: #d00000;
+}
+
+@media (max-width: 1068px) {
+  .register_login h2 {
+    color: white;
+  }
+  .login_form {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .login_form .auth_login {
+    width: 470px;
+  }
+  .login_form .auth_login .login_div {
+    height: 100%;
+  }
+  .login_form h2 {
+    font-size: 20px;
+    color: white;
+    font-weight: 700;
+  }
+}
+@media (max-width: 576px) {
+  .register_login h2 {
+    color: white;
+  }
+  .login_form {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .login_form .auth_login {
+    width: 100%;
+  }
+  .login_form .auth_login .login_div {
+    height: 100%;
+  }
+  .login_form h2 {
+    font-size: 20px;
+    color: white;
+    font-weight: 700;
+  }
+}
+.user-dashbord {
+  padding: 2px 15px;
+  margin: auto;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+  background: url("https://www.era.europa.eu/sites/default/files/2023-06/European%20Rail%20Safety%20Days%202023%20Visual%20Carousel%20-%20Light.jpg");
+  background-position: center;
+  background-size: cover;
+  height: 360px;
+  width: 100%;
+  background-repeat: no-repeat !important;
+}
+.user-dashbord h2 {
+  text-align: center;
+  font-size: 30px;
+  color: #d00000;
+  font-weight: 700;
+}
+
+.user_info {
+  text-align: center;
+  margin: auto;
+  border: 1px solid #0844A8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 5px 2px;
+  background-color: #c6d8ff;
+  height: 100%;
+  width: 520px;
+  border-radius: 15px;
+}
+.user_info h3 {
+  font-size: 25px;
+  color: #0844A8;
+  font-weight: 600;
+}
+.user_info .button-send {
+  margin-top: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.user_info .button-send button {
+  margin: 10px 15px;
+  cursor: pointer;
+  height: 40px;
+  width: 160px;
+  background-color: #0844A8;
+  font-size: 20px;
+  font-weight: 700;
+  color: white;
+  border: none;
+  border-radius: 15px;
+  text-align: center;
+  transition: 0.2s ease;
+}
+.user_info .button-send button:hover {
+  filter: brightness(92%);
+}
+.user_info i {
+  border-radius: 10px;
+  background-color: #fcc53b;
+  padding: 5px;
+  width: 90px;
+  height: 72px;
+  text-align: center;
+  border: 3px solid #161616;
+  font-size: 50px;
+  gap: 5px;
+  font-weight: 600;
+  color: #161616;
+}
+
+@media (max-width: 1068px) {
+  .user-dashbord, .user_info {
+    width: 100%;
+    height: 100%;
+    margin: auto;
+  }
+  .user-dashbord h2, .user_info h2 {
+    text-align: center;
+    font-size: 25px;
+    color: #0844A8;
+    font-weight: 700;
+  }
+}
+@media (max-width: 576px) {
+  .user-dashbord, .user_info {
+    padding: 10px;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+  }
+  .user-dashbord h2, .user_info h2 {
+    text-align: center;
+    font-size: 25px;
+    color: #0844A8;
+    font-weight: 700;
+  }
+  .user-dashbord h2 .register_form, .user_info h2 .register_form {
+    padding: 2px 15px;
+    margin: auto;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+    background: url("https://lexinform.com.ua/wp-content/uploads/2020/11/beautiful-blue-passenger-train-at-the-railway-stat-PBHGTZH-min-scaled.jpg");
+    background-position: center;
+    background-size: cover;
+    height: 330px;
+    width: 100%;
+    background-repeat: no-repeat !important;
+    width: 100%;
+    height: 100%;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .user-dashbord h2 .register_form .auth_user, .user_info h2 .register_form .auth_user {
+    border: 1px solid #c6d8ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 15px;
+    background-color: #e7e6e6;
+    height: 100%;
+    position: relative;
+    width: 650px;
+    border-radius: 15px;
+  }
+  .user-dashbord h2 .register_form .auth_user .errors, .user_info h2 .register_form .auth_user .errors {
+    margin: 3px;
+    text-align: center;
+    font-size: 17px;
+    color: #d00000;
+    font-weight: 700;
+  }
+  .user-dashbord h2 .register_form .auth_user form, .user_info h2 .register_form .auth_user form {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+  }
+  .user-dashbord h2 .register_form .auth_user input, .user_info h2 .register_form .auth_user input {
+    width: 215px;
+    margin: 5px;
+    border: none;
+    font-weight: 600;
+    padding: 5px;
+    font-size: 15px;
+    border: 1px solid #0844A8;
+    border-radius: 10px;
+    height: auto;
+    transition: 0.3s ease;
+  }
+  .user-dashbord h2 .register_form .auth_user input:focus, .user_info h2 .register_form .auth_user input:focus {
+    outline: none;
+    border: 1px solid #161616;
+  }
+  .user-dashbord h2 .register_form .auth_user .login_div, .user_info h2 .register_form .auth_user .login_div {
+    height: 130px;
+    width: 900px;
+    margin: 5px 10px;
+    padding: 15px 25px;
+    background-color: #c6d8ff;
+    border-radius: 15px;
+    text-align: center;
+  }
+  .user-dashbord h2 .register_form .auth_user h3, .user_info h2 .register_form .auth_user h3 {
+    font-size: 25px;
+    color: #0844A8;
+    font-weight: 600;
+  }
+  .user-dashbord h2 .register_form .auth_user p, .user_info h2 .register_form .auth_user p {
+    font-size: 17px;
+    color: #161616;
+    font-weight: 500;
+  }
+  .user-dashbord h2 .register_form .auth_user a, .user_info h2 .register_form .auth_user a {
+    margin: 5px;
+    font-size: 20px;
+    color: #161616;
+    font-weight: 500;
+    transition: 0.2s ease;
+  }
+  .user-dashbord h2 .register_form .auth_user a:hover, .user_info h2 .register_form .auth_user a:hover {
+    color: #0844A8;
+  }
+  .user-dashbord h2 .register_form .button-send, .user_info h2 .register_form .button-send {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .user-dashbord h2 .register_form .button-send button, .user_info h2 .register_form .button-send button {
+    margin: 10px 15px;
+    cursor: pointer;
+    height: 40px;
+    width: 215px;
+    background-color: #0844A8;
+    font-size: 20px;
+    font-weight: 700;
+    padding: 5px;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    text-align: center;
+    transition: 0.2s ease;
+  }
+  .user-dashbord h2 .register_form .button-send button:hover, .user_info h2 .register_form .button-send button:hover {
+    filter: brightness(92%);
+  }
+  .user-dashbord h2 .register_form .password-container2, .user_info h2 .register_form .password-container2 {
+    position: relative;
+    display: inline-block;
+  }
+  .user-dashbord h2 .register_form .password-container2 .toggle-password, .user_info h2 .register_form .password-container2 .toggle-password {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    pointer-events: auto;
+  }
+  .user-dashbord h2 .register_form .password-container2 .toggle-password i, .user_info h2 .register_form .password-container2 .toggle-password i {
+    color: #0844A8;
+  }
+}
+@media (max-width: 576px) and (max-width: 1068px) {
+  .user-dashbord h2 .register_form, .user_info h2 .register_form {
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .user-dashbord h2 .register_form .auth_user, .user_info h2 .register_form .auth_user {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+  }
+  .user-dashbord h2 .register_form .auth_user .login_div, .user_info h2 .register_form .auth_user .login_div {
+    height: 100%;
+    width: 100%;
+  }
+}
+@media (max-width: 576px) and (max-width: 576px) {
+  .user-dashbord h2 .register_form, .user_info h2 .register_form {
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .user-dashbord h2 .register_form .auth_user, .user_info h2 .register_form .auth_user {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+  }
+  .user-dashbord h2 .register_form .auth_user .login_div, .user_info h2 .register_form .auth_user .login_div {
+    height: 100%;
+    width: 100%;
+  }
+}
+@media (max-width: 576px) {
+  .user-dashbord h2 .register_login, .user_info h2 .register_login {
+    padding: 2px 15px;
+    margin: auto;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+    background: url("https://www.bdbpitmans.com/wp-content/uploads/Train-track.jpg");
+    background-position: center;
+    background-size: cover;
+    height: 330px;
+    width: 100%;
+    background-repeat: no-repeat !important;
+  }
+  .user-dashbord h2 .register_login h2, .user_info h2 .register_login h2 {
+    text-align: center;
+    font-size: 30px;
+    color: #0844A8;
+    font-weight: 700;
+  }
+  .user-dashbord h2 .login_form, .user_info h2 .login_form {
+    width: 100%;
+    height: 100%;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .user-dashbord h2 .login_form .auth_login, .user_info h2 .login_form .auth_login {
+    border: 1px solid #c6d8ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 5px 15px;
+    background-color: #e7e6e6;
+    height: 100%;
+    position: relative;
+    width: 620px;
+    border-radius: 15px;
+  }
+  .user-dashbord h2 .login_form .auth_login h3, .user_info h2 .login_form .auth_login h3 {
+    text-align: center;
+    font-size: 25px;
+    color: #161616;
+    font-weight: 700;
+  }
+  .user-dashbord h2 .login_form .auth_login form, .user_info h2 .login_form .auth_login form {
+    text-align: center;
+  }
+  .user-dashbord h2 .login_form .auth_login input, .user_info h2 .login_form .auth_login input {
+    margin: 5px;
+    border: none;
+    width: 215px;
+    font-weight: 600;
+    padding: 5px;
+    font-size: 15px;
+    border: 1px solid #0844A8;
+    border-radius: 10px;
+    height: auto;
+    transition: 0.3s ease;
+  }
+  .user-dashbord h2 .login_form .auth_login input:focus, .user_info h2 .login_form .auth_login input:focus {
+    outline: none;
+    border: 1px solid #161616;
+  }
+  .user-dashbord h2 .login_form .auth_login .password-container, .user_info h2 .login_form .auth_login .password-container {
+    position: relative;
+    display: inline-block;
+  }
+  .user-dashbord h2 .login_form .auth_login .password-container .toggle-password, .user_info h2 .login_form .auth_login .password-container .toggle-password {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    pointer-events: auto;
+  }
+  .user-dashbord h2 .login_form .auth_login .password-container .toggle-password i, .user_info h2 .login_form .auth_login .password-container .toggle-password i {
+    color: #0844A8;
+  }
+  .user-dashbord h2 .login_form .button-send, .user_info h2 .login_form .button-send {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .user-dashbord h2 .login_form .button-send button, .user_info h2 .login_form .button-send button {
+    cursor: pointer;
+    height: 40px;
+    width: 215px;
+    background-color: #0844A8;
+    font-size: 20px;
+    font-weight: 700;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    text-align: center;
+    transition: 0.2s ease;
+  }
+  .user-dashbord h2 .login_form .button-send button:hover, .user_info h2 .login_form .button-send button:hover {
+    filter: brightness(92%);
+  }
+  .user-dashbord h2 .login_form .delete_account, .user_info h2 .login_form .delete_account {
+    text-align: center;
+    margin: auto;
+    height: 100%;
+    width: 100%;
+  }
+  .user-dashbord h2 .login_form .delete_account #delete-user, .user_info h2 .login_form .delete_account #delete-user {
+    background-color: #d00000;
+  }
+}
+@media (max-width: 576px) and (max-width: 1068px) {
+  .user-dashbord h2 .register_login h2, .user_info h2 .register_login h2 {
+    color: white;
+  }
+  .user-dashbord h2 .login_form, .user_info h2 .login_form {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .user-dashbord h2 .login_form .auth_login, .user_info h2 .login_form .auth_login {
+    width: 470px;
+  }
+  .user-dashbord h2 .login_form .auth_login .login_div, .user_info h2 .login_form .auth_login .login_div {
+    height: 100%;
+  }
+  .user-dashbord h2 .login_form h2, .user_info h2 .login_form h2 {
+    font-size: 20px;
+    color: white;
+    font-weight: 700;
+  }
+}
+@media (max-width: 576px) and (max-width: 576px) {
+  .user-dashbord h2 .register_login h2, .user_info h2 .register_login h2 {
+    color: white;
+  }
+  .user-dashbord h2 .login_form, .user_info h2 .login_form {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .user-dashbord h2 .login_form .auth_login, .user_info h2 .login_form .auth_login {
+    width: 100%;
+  }
+  .user-dashbord h2 .login_form .auth_login .login_div, .user_info h2 .login_form .auth_login .login_div {
+    height: 100%;
+  }
+  .user-dashbord h2 .login_form h2, .user_info h2 .login_form h2 {
+    font-size: 20px;
+    color: white;
+    font-weight: 700;
+  }
+}
+@media (max-width: 576px) {
+  .user-dashbord h2 .user-dashbord, .user_info h2 .user-dashbord {
+    padding: 2px 15px;
+    margin: auto;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+    background: url("https://www.era.europa.eu/sites/default/files/2023-06/European%20Rail%20Safety%20Days%202023%20Visual%20Carousel%20-%20Light.jpg");
+    background-position: center;
+    background-size: cover;
+    height: 360px;
+    width: 100%;
+    background-repeat: no-repeat !important;
+  }
+  .user-dashbord h2 .user-dashbord h2, .user_info h2 .user-dashbord h2 {
+    text-align: center;
+    font-size: 30px;
+    color: #d00000;
+    font-weight: 700;
+  }
+  .user-dashbord h2 .user_info, .user_info h2 .user_info {
+    text-align: center;
+    margin: auto;
+    border: 1px solid #0844A8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 5px 2px;
+    background-color: #c6d8ff;
+    height: 100%;
+    width: 520px;
+    border-radius: 15px;
+  }
+  .user-dashbord h2 .user_info h3, .user_info h2 .user_info h3 {
+    font-size: 25px;
+    color: #0844A8;
+    font-weight: 600;
+  }
+  .user-dashbord h2 .user_info .button-send, .user_info h2 .user_info .button-send {
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .user-dashbord h2 .user_info .button-send button, .user_info h2 .user_info .button-send button {
+    margin: 10px 15px;
+    cursor: pointer;
+    height: 40px;
+    width: 160px;
+    background-color: #0844A8;
+    font-size: 20px;
+    font-weight: 700;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    text-align: center;
+    transition: 0.2s ease;
+  }
+  .user-dashbord h2 .user_info .button-send button:hover, .user_info h2 .user_info .button-send button:hover {
+    filter: brightness(92%);
+  }
+  .user-dashbord h2 .user_info i, .user_info h2 .user_info i {
+    border-radius: 10px;
+    background-color: #fcc53b;
+    padding: 5px;
+    width: 90px;
+    height: 72px;
+    text-align: center;
+    border: 3px solid #161616;
+    font-size: 50px;
+    gap: 5px;
+    font-weight: 600;
+    color: #161616;
+  }
+}
+@media (max-width: 576px) and (max-width: 1068px) {
+  .user-dashbord h2 .user-dashbord, .user-dashbord h2 .user_info, .user_info h2 .user-dashbord, .user_info h2 .user_info {
+    width: 100%;
+    height: 100%;
+    margin: auto;
+  }
+  .user-dashbord h2 .user-dashbord h2, .user-dashbord h2 .user_info h2, .user_info h2 .user-dashbord h2, .user_info h2 .user_info h2 {
+    text-align: center;
+    font-size: 25px;
+    color: #0844A8;
+    font-weight: 700;
+  }
+}
+@media (max-width: 576px) and (max-width: 576px) {
+  .user-dashbord h2 .user-dashbord, .user-dashbord h2 .user_info, .user_info h2 .user-dashbord, .user_info h2 .user_info {
+    padding: 10px;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+  }
+  .user-dashbord h2 .user-dashbord h2, .user-dashbord h2 .user_info h2, .user_info h2 .user-dashbord h2, .user_info h2 .user_info h2 {
+    text-align: center;
+    font-size: 25px;
+    color: #0844A8;
+    font-weight: 700;
+  }
+}
+.contact {
+  padding: 2px 15px;
+  margin: auto;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+  background: url("https://ic.pics.livejournal.com/matsam/17556459/9250080/9250080_original.png");
+  background-position: center;
+  background-size: cover;
+  height: 360px;
+  width: 100%;
+  background-repeat: no-repeat !important;
+}
+.contact h2 {
+  font-size: 30px;
+  color: #0844A8;
+  font-weight: 700;
+}
+
+.txt-contact {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0px;
+  background-color: #0844A8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.txt-contact h4 {
+  text-align: center;
+  font-size: 20px;
+  color: white;
+  font-weight: 600;
+}
+
+.contact_form {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 600px;
+  padding: 20px;
+  border: 1px solid #0844A8;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.contact_form form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.contact_form form input {
+  margin: 5px 0;
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #0844A8;
+  border-radius: 5px;
+  font-size: 15px;
+  transition: border-color 0.3s ease;
+}
+.contact_form form input:focus {
+  outline: none;
+  border-color: #161616;
+}
+.contact_form form textarea {
+  margin: 5px 0;
+  width: 250px;
+  padding: 10px;
+  border: 1px solid #0844A8;
+  border-radius: 5px;
+  font-size: 15px;
+  transition: border-color 0.3s ease;
+  resize: vertical;
+  height: auto;
+}
+.contact_form form textarea:focus {
+  outline: none;
+  border-color: #161616;
+}
+.contact_form .button-send {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px;
+}
+.contact_form .button-send a {
+  text-decoration: none;
+  color: #e7e6e6;
+}
+.contact_form .button-send button {
+  cursor: pointer;
+  height: 40px;
+  width: 250px;
+  background-color: #0844A8;
+  font-size: 20px;
+  font-weight: 700;
+  color: white;
+  border: none;
+  border-radius: 15px;
+  text-align: center;
+  transition: background-color 0.2s ease;
+}
+.contact_form .button-send button:hover {
+  filter: brightness(92%);
+}
+
+@media (max-width: 1068px) {
+  .contact_form {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .txt-contact {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .contact {
+    width: 100%;
+  }
+  .contact h2 {
+    color: white;
+    font-weight: 700;
+  }
+}
+@media (max-width: 576px) {
+  .contact_form {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .txt-contact {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .contact {
+    width: 100%;
+  }
+  .contact h2 {
+    color: white;
+    font-weight: 700;
+  }
+}
+.despre {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+.despre img {
+  border-radius: 50%;
+  height: 150px;
+  margin: auto;
+}
+.despre .modal_div {
+  margin: 15px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  width: 550px;
+  padding: 15px 25px;
+  background-color: #e3e4e6;
+  border-radius: 15px;
+  text-align: center;
+}
+.despre .modal_div p {
+  text-align: center;
+  font-size: 17px;
+  color: #161616;
+  font-weight: 700;
+}
+.despre .modal_div h4 {
+  text-align: center;
+  font-size: 20px;
+  color: #0844A8;
+}
+.despre .modal_div h3 {
+  text-align: center;
+  font-size: 25px;
+  color: #d00000;
+}
+
+@media (max-width: 1068px) {
+  .despre {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .despre .modal_div {
+    width: 100%;
+    height: 100%;
+  }
+}
+@media (max-width: 576px) {
+  .despre {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .despre .modal_div {
+    width: 100%;
+    height: 100%;
+  }
+}
+.despre-center {
+  margin: 15px 0px;
+  gap: 10px 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 430px;
+}
+.despre-center img {
+  border: 2px solid #fcc53b;
+  border-radius: 50px;
+  height: 150px;
+  margin: auto;
+}
+.despre-center .modal_div {
+  margin: 15px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  width: 550px;
+  padding: 15px 25px;
+  background-color: #c6d8ff;
+  border-radius: 15px;
+  text-align: center;
+}
+.despre-center .modal_div p {
+  margin: 5px 0px;
+  text-align: center;
+  font-size: 17px;
+  color: #161616;
+  font-weight: 700;
+}
+.despre-center .modal_div h3 {
+  text-align: center;
+  font-size: 25px;
+  color: #0844A8;
+  font-weight: 600;
+}
+
+@media (max-width: 1068px) {
+  .despre-center {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .despre-center .modal_div {
+    width: 100%;
+    height: 100%;
+  }
+}
+@media (max-width: 576px) {
+  .despre-center {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .despre-center .modal_div {
+    width: 100%;
+    height: 100%;
+  }
+  .despre-center .modal_div img {
+    width: 100%;
+    height: 100%;
+  }
+}
+.slider-despre {
+  padding: 24px;
+  background-repeat: no-repeat !important;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.slider-despre::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 450px;
+  background: url("https://lexinform.com.ua/wp-content/uploads/2019/01/beautiful-blue-passenger-tr-min.jpg") no-repeat center/cover;
+  filter: blur(2px);
+  z-index: -1;
+}
+.slider-despre h4 {
+  text-align: center;
+  font-size: 20px;
+  color: white;
+  text-shadow: 1px 2px 2px #161616;
+  font-weight: 700;
+}
+.slider-despre h2 {
+  text-align: center;
+  font-size: 30px;
+  color: #0844A8;
+  font-weight: 700;
+}
+.slider-despre .decoration {
+  text-align: center;
+  font-size: 20px;
+  color: #d00000;
+  font-weight: 700;
+}
+.slider-despre .swiper {
+  height: 320px;
+  width: 860px;
+  border-radius: 15px;
+}
+.slider-despre .swiper-slide {
+  width: auto;
+  height: auto;
+}
+.slider-despre .swiper-slide img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
+@media (max-width: 1068px) {
+  .slider-despre h4 {
+    display: none;
+  }
+  .slider-despre .swiper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+  }
+}
+@media (max-width: 576px) {
+  .slider-despre h4 {
+    display: none;
+  }
+  .slider-despre .swiper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+  }
+}
+.mersul-trenuri {
+  padding: 2px 15px;
+  margin: auto;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+  background: url("https://www.thalesgroup.com/sites/default/files/database/assets/images/2018-09/robots%20on%20rail.jpg");
+  background-position: center;
+  background-size: cover;
+  height: 360px;
+  width: 100%;
+  background-repeat: no-repeat !important;
+}
+.mersul-trenuri h2 {
+  text-align: center;
+  font-size: 30px;
+  color: #0844A8;
+  text-shadow: 1px 2px 2px #161616;
+  font-weight: 800;
+}
+
+@media (max-width: 1068px) {
+  .mersul-trenuri {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+}
+@media (max-width: 576px) {
+  .mersul-trenuri {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+}
+.list-routesNational {
+  padding: 15px 25px;
+  gap: 10px 35px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.list-routesNational img {
+  border: 2px solid #fcc53b;
+  border-radius: 50px;
+  height: 150px;
+  margin: auto;
+}
+.list-routesNational .modal_div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 250px;
+  width: 550px;
+  background-color: #c6d8ff;
+  border-radius: 15px;
+  text-align: center;
+}
+.list-routesNational .modal_div p {
+  margin: 5px 0px;
+  text-align: center;
+  font-size: 17px;
+  color: #161616;
+  font-weight: 700;
+}
+.list-routesNational .modal_div h3 {
+  text-align: center;
+  font-size: 25px;
+  color: #0844A8;
+  font-weight: 600;
+}
+.list-routesNational button {
+  cursor: pointer;
+  height: 40px;
+  width: 250px;
+  background-color: #0844A8;
+  font-size: 20px;
+  font-weight: 700;
+  color: white;
+  border: none;
+  border-radius: 15px;
+  text-align: center;
+  transition: background-color 0.2s ease;
+}
+.list-routesNational button:hover {
+  filter: brightness(92%);
+}
+.list-routesNational #modal {
+  background-color: #fcc53b;
+}
+
+@media (max-width: 1068px) {
+  .list-routesNational {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+  }
+  .list-routesNational .modal_div {
+    width: 100%;
+    height: 100%;
+  }
+}
+@media (max-width: 576px) {
+  .list-routesNational {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+  }
+  .list-routesNational .modal_div {
+    width: 100%;
+    height: 100%;
+  }
+}
+.text-national {
+  margin: 10px 0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: auto;
+  height: auto;
+}
+.text-national h2 {
+  margin: 0px 25px;
+  padding-left: 35px;
+  text-align: start;
+  font-size: 30px;
+  color: #0844A8;
+  font-weight: 600;
+}
+
+@media (max-width: 1068px) {
+  .text-national {
+    display: none;
+  }
+}
+.trv {
+  width: 100%;
+  height: 100%;
+}
+.trv .map-alls {
+  background-color: #c6d8ff;
+  padding: 5px 15px;
+  text-align: center;
+  margin: auto;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.trv .map-alls button {
+  cursor: pointer;
+  height: 50px;
+  width: 250px;
+  background-color: #0844A8;
+  font-size: 20px;
+  font-weight: 700;
+  padding: 5px;
+  color: #e7e6e6;
+  border: none;
+  border-radius: 18px;
+  text-align: center;
+  transition: 0.2s ease;
+}
+.trv .map-alls button:hover {
+  filter: brightness(92%);
+}
+.trv .txth2 h2 {
+  font-size: 30px;
+  color: #0844A8;
+  text-align: center;
+  font-weight: 800;
+}
+.trv .txth2 h4 {
+  font-size: 20px;
+  color: #161616;
+  text-align: center;
+  font-weight: 600;
+}
+.trv .txth2 p {
+  font-size: 17px;
+  color: #0844A8;
+  text-align: center;
+  font-weight: 600;
+}
+.trv .logo {
+  border-radius: 20%;
+  height: 120px;
+  border: 1px solid #0844A8;
+}
+.trv .all-log {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.trv .all-log h3 {
+  text-align: center;
+  font-size: 25px;
+  color: #161616;
+}
+.trv .station-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 8px 0;
+  border-bottom: 1px solid #7e7d7d;
+}
+.trv .station-list .station {
+  font-weight: bold;
+  color: #0844A8;
+}
+.trv .station-list .time {
+  font-size: 20px;
+}
+.trv .station-list .return-time {
+  font-size: 20px;
+  color: #d00000;
+}
+.trv .station-list li {
+  margin: auto;
+  color: #0844A8;
+  font-size: 20px;
+  font-weight: 600;
+  padding: 8px 0;
+  border-bottom: 1px solid #e3e4e6;
+}
+
+@media (max-width: 1068px) {
+  .trv {
+    height: 100%;
+    width: 100%;
+  }
+  .trv .map-alls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .trv .map-alls .txth2 h2 {
+    font-size: 25px;
+  }
+  .trv .station-list {
+    width: 100%;
+    height: 100%;
+  }
+}
+@media (max-width: 576px) {
+  .trv {
+    height: 100%;
+    width: 100%;
+  }
+  .trv .map-alls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .trv .map-alls .txth2 h2 {
+    font-size: 20px;
+  }
+  .trv .station-list {
+    width: 100%;
+    height: 100%;
+  }
+}
+#map {
+  height: 400px;
+  width: 100%;
+}
+
+#map2 {
+  height: 400px;
+  width: 100%;
+}
+
+#map3 {
+  height: 400px;
+  width: 100%;
+}
+
+#map4 {
+  height: 400px;
+  width: 100%;
+}/*# sourceMappingURL=styles.css.map */

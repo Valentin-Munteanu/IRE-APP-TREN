@@ -1,0 +1,30 @@
+1 => Afisarea formularul Cautare + Cumpare de bilete + Modernizarea cod TASK [+]
+2 -> Stilizarea DropDown la vagon pentru a vedea locurile [+]
+3 => Afisarea Partii de Admin + Conectarea Biletului + Rutei cu Admin [+]
+4 => Modernizarea CRUD CREATE, UPDATE, DELETE, SOFTDELETE(HIDDEN) [+]
+ RUTE + BILET
+5 STILIZARE MAILER IN FORMA BILET [+]
+
+6-> CREEAREA CAMPURI LOGIGE IN TABEL + AFISAREA JS SEPARAT + VIEW FORMULARE CONFORM VAGONULUI [+]
+
+7-> Pagini Front -> Abonamente,(Mailer + DataBase Date Pasageri)
+
+ Servicii,[+]
+ Despre Noi, [+]
+ Oferte de calatorie(Reduceri etc) [+]
+  Contacte(Support ),("Mailer") [+]
+   Intrebari, [+]
+    Mersul Trenului (Tur Retur) (Front + Map/Route) [+]
+     Logarea, [+]
+    Trenuri Anulate, [+]
+      Pagina Utilizator,[+] 
+
+
+       Admin Pages, [
+        Crud, UPDATE, SOFT DELETE + DELETE => BILETES + ROUTES, [+]
+        CRUD + UPDATE, SOFT DELETE + DELETE => Trenuri Anulate[+]
+       ]
+
+
+    Responsive Dising All device[+]
+
