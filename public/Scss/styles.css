@@ -480,7 +480,7 @@
   display: flex;
   justify-content: center;
   align-items: start;
-  background: url("https://fotooboimoi.ru/upload/iblock/da2/da2ac15150a3653dfdad1a56a11154f6.jpg");
+  background: url("../Images/trenC.jpg");
   background-position: center;
   background-size: cover;
   height: 300px;
@@ -510,7 +510,7 @@
   display: flex;
   justify-content: center;
   align-items: start;
-  background: url("https://w.forfun.com/fetch/29/2983529ab8a59a77eb4c04e58d180618.jpeg?w=2500");
+  background: url("../Images/TRENS.jpg");
   background-position: center;
   background-size: cover;
   height: 300px;
@@ -700,7 +700,7 @@
   justify-content: start;
   align-items: center;
   flex-direction: column;
-  background: url("https://conversationstation.co.za/wp-content/uploads/2018/11/Conversation-Station_Warning-Light.jpg");
+  background: url("../Images/BCA.jpg");
   background-position: center;
   background-size: cover;
   height: 440px;
@@ -890,7 +890,7 @@ p {
   }
 }
 .abonamente {
-  background: url("https://fotooboimoi.ru/upload/iblock/da2/da2ac15150a3653dfdad1a56a11154f6.jpg");
+  background: url("../Images/BASR.jpg");
   background-repeat: no-repeat !important;
   background-size: cover;
   background-position: center;

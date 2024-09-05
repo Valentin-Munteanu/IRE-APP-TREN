@@ -153,7 +153,7 @@ Route::prefix("send")->group(function(){
 
     Route::get('/user-logout', [UserController::class, 'logoutUser'])->name('logout-register');
 
-    Route::get('/user-dashboard', [UserController::class, 'indexUser'])->name('user.dashboard');
+Route::get('/user-dashboard', [UserController::class, 'indexUser'])->name('user.dashboard');
     Route::put('/edit-user', [UserController::class, 'editUser'])->name('user.update');
     Route::delete('/delete-user', [UserController::class, 'deleteUser'])->name('user.delete');
 });
