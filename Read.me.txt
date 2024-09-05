@@ -1,0 +1,37 @@
+Descrierea proiectului: Operator privat de cale ferată "Intercity & Regional RailExpress (IRE)"
+
+Acest proiect realizat în Laravel 11 folosește metoda CRUD pentru gestionarea și administrarea rutelor de tren și a biletelor online.
+Website-ul este structurat în trei părți principale:
+
+1. Aplicația pentru procurarea biletelor online
+Aceasta permite utilizatorilor să achiziționeze bilete de tren direct de pe site.
+
+Funcționalitățile cheie includ:
+
+Căutarea rutei de tren: Utilizatorii pot căuta rute în funcție de informațiile din baza de date.
+
+Selectarea locurilor: După selectarea rutei, utilizatorii pot alege locurile dorite în vagoane.
+Prețul se ajustează automat în funcție de locurile selectate.
+Formularul pasagerilor:
+
+Utilizatorii completează un formular cu datele personale (nume, prenume, email),
+ validat cu ajutorul Laravel Request.
+
+Confirmarea biletului: După completarea achiziției, biletele sunt trimise pe email,
+iar pasagerii sunt înregistrați în baza de date.
+
+2. Secțiunea informativă pentru utilizatori
+Această secțiune oferă informații utile și actualizate despre:
+
+Călătorii și trasee: Include hărți detaliate ale rutelor de tren.
+Oferte speciale și destinații turistice: Informații despre destinațiile populare și reduceri speciale.
+Contact și informații despre companie: Detalii despre operator și modalități de contact.
+
+3. Panoul de administrare (Admin)
+Admin-ul are acces la un panou dedicat unde poate gestiona și actualiza conținutul site-ului.
+ Funcționalitățile includ:
+
+Gestionarea rutelor și biletelor:
+Adminul poate crea, actualiza, șterge sau ascunde rute de tren și bilete.
+Gestionarea informațiilor: Adminul poate actualiza informațiile publice despre trenuri anulate,
+destinații și oferte speciale, pentru a menține utilizatorii bine informați.
